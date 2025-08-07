@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "input": "¿Cuál es el tipo de interés actual de un depósito a plazo fijo?",
+    "prediction": "El tipo de interés es del 2,5% para depósitos a 12 meses.",
+    "ground_truth": "Actualmente, los depósitos a plazo fijo a 12 meses ofrecen un interés del 2,5%."
+  },
+  {
+    "id": "2",
+    "input": "¿Cuáles son los requisitos para abrir una cuenta corriente?",
+    "prediction": "Debes presentar tu DNI y una factura reciente.",
+    "ground_truth": "Se requiere el DNI, una factura actual y un justificante de ingresos."
+  }
+]
