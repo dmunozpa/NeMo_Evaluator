@@ -1,0 +1,5 @@
+
+-- docker login -u '$oauthtoken' -p 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 nvcr.io
+docker login nvcr.io
+Username: $oauthtoken
+Password: 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

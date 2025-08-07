@@ -1,0 +1,1 @@
+nemo_microservices >= 1.0.1
