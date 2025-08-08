@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0",
+  "id": "eval-2WUECDfS7k2eMtaDXhmVCV",
+  "description": null,
+  "type_prefix": "eval",
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-08T10:16:08.327025",
+  "updated_at": "2025-08-08T10:34:32.386125",
+  "custom_fields": {},
+  "ownership": null,
+  "status": "created",
+  "status_details": {
+    "message": null,
+    "task_status": {
+      "metricas_combinadas_3": "completed"
+    },
+    "progress": 100.0
+  },
+  "config": {
+    "schema_version": "1.0",
+    "id": "eval-config-2AaSovZUkrQ9k52FyYvgQQ",
+    "description": null,
+    "type_prefix": "eval-config",
+    "namespace": "default",
+    "project": "demo_3_metricas",
+    "created_at": "2025-08-08T10:16:08.326517",
+    "updated_at": "2025-08-08T10:16:08.326520",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-config-2AaSovZUkrQ9k52FyYvgQQ",
+    "type": "custom",
+    "params": null,
+    "tasks": {
+      "metricas_combinadas_3": {
+        "type": "data",
+        "params": null,
+        "metrics": {
+          "similaridad": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "nvidia_llama-3.1-nemotron-nano-8b-v1"
+                },
+                "id": "model-NVAeyZ3SLnnSrY93d9p9V4",
+                "name": "model-NVAeyZ3SLnnSrY93d9p9V4"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Your task is to evaluate the semantic similarity between two responses."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Respond in the following format SIMILARITY: 4. The similarity should be a score between 0 and 10.\\n\\nRESPONSE 1: {{prediction}}\\n\\nRESPONSE 2: {{ground_truth}}.\\n\\n"
+                  }
+                ]
+              },
+              "scores": {
+                "similarity": {
+                  "type": "int",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "SIMILARITY: (\\d)"
+                  }
+                }
+              }
+            }
+          },
+          "completitud": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "nvidia_llama-3.1-nemotron-nano-8b-v1"
+                },
+                "id": "model-3sYPLSity8Z5xuVKAgN4ar",
+                "name": "model-3sYPLSity8Z5xuVKAgN4ar"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Your task is to evaluate the semantic completness between two responses."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Respond in the following format COMPLETNESS: 4. The completness should be a score between 0 and 5.\\n\\nRESPONSE 1: {{prediction}}\\n\\nRESPONSE 2: {{ground_truth}}.\\n\\n"
+                  }
+                ]
+              },
+              "scores": {
+                "completness": {
+                  "type": "int",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "COMPLETNESS: (\\d)"
+                  }
+                }
+              }
+            }
+          },
+          "tono_adecuado": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "nvidia_llama-3.1-nemotron-nano-8b-v1"
+                },
+                "id": "model-RbgqQNGF8LgCEBNymbRxLA",
+                "name": "model-RbgqQNGF8LgCEBNymbRxLA"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Your task is to evaluate the semantic tone between two responses."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Eval\u00faa si el tono de la respuesta es adecuado para el contexto. Escala del 1 (muy inadecuado) al 5 (perfectamente adecuado)."
+                  }
+                ]
+              },
+              "scores": {
+                "tono_resultado": {
+                  "type": "int",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "TONO_RESULTADO: (\\d)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dataset": null
+      }
+    },
+    "groups": null
+  },
+  "target": {
+    "schema_version": "1.0",
+    "id": "eval-target-U7ZimPcMvyqJJPotZnLGuc",
+    "description": null,
+    "type_prefix": "eval-target",
+    "namespace": "default",
+    "project": null,
+    "created_at": "2025-08-08T10:16:08.326579",
+    "updated_at": "2025-08-08T10:16:08.326580",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-target-U7ZimPcMvyqJJPotZnLGuc",
+    "type": "rows",
+    "cached_outputs": null,
+    "model": null,
+    "retriever": null,
+    "rag": null,
+    "rows": [
+      {
+        "id": "1",
+        "input": "\u00bfCu\u00e1l es el tipo de inter\u00e9s actual de un dep\u00f3sito a plazo fijo?",
+        "prediction": "El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.",
+        "ground_truth": "Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%."
+      },
+      {
+        "id": "2",
+        "input": "\u00bfCu\u00e1les son los requisitos para abrir una cuenta corriente?",
+        "prediction": "Debes presentar tu DNI y una factura reciente.",
+        "ground_truth": "Se requiere el DNI, una factura actual y un justificante de ingresos."
+      }
+    ],
+    "dataset": null
+  },
+  "result": "evaluation_result-C4tqum47DjfAuzGbaSLiFZ",
+  "output_files_url": null
+}
