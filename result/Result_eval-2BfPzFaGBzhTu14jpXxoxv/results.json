@@ -1,0 +1,240 @@
+{
+  "metricas_combinadas": [
+    {
+      "item": {
+        "id": "1",
+        "input": "\u00bfCu\u00e1l es el tipo de inter\u00e9s actual de un dep\u00f3sito a plazo fijo?",
+        "prediction": "El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.",
+        "ground_truth": "Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "accuracy": {
+          "scores": {
+            "string-check": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        },
+        "similaridad": {
+          "scores": {
+            "similarity": {
+              "value": 8.0,
+              "stats": null
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "similarity": {
+              "value": 4.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic similarity between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format SIMILARITY: 4. The similarity should be a score between 0 and 10.\\n\\nRESPONSE 1: El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\\n\\nRESPONSE 2: Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-ha9xhl5gujq7yaizen69al",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "SIMILARITY: 8.9 The two responses are quite similar as they both convey the same information about the interest rate of fixed deposits. However, the second response provides slightly more context by stating that this is the current situation. The similarity score could be further refined to 9 if the responses were identical in every aspect.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754647021,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 67,
+              "prompt_tokens": 119,
+              "total_tokens": 186
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic completness between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format COMPLETNESS: 4. The completness should be a score between 0 and 5.\\n\\nRESPONSE 1: El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\\n\\nRESPONSE 2: Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-cm07nkx2dsmlwxlsw3k8w",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "COMPLETNESS: 4.3\n\nThe two responses are almost identical in meaning but Response 2 is slightly more formal and provides additional context (\"actualmente\") which improves the completeness of the information. However, since there's no significant difference in clarity or relevance between the two responses, I would still rate them highly as a complete response with a score of 4.3. To improve this further, one could add more details about the financial institution offering the deposit, for example.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754647077,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 99,
+              "prompt_tokens": 123,
+              "total_tokens": 222
+            },
+            "stats": {}
+          }
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "2",
+        "input": "\u00bfCu\u00e1les son los requisitos para abrir una cuenta corriente?",
+        "prediction": "Debes presentar tu DNI y una factura reciente.",
+        "ground_truth": "Se requiere el DNI, una factura actual y un justificante de ingresos."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "accuracy": {
+          "scores": {
+            "string-check": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        },
+        "similaridad": {
+          "scores": {
+            "similarity": {
+              "value": 7.0,
+              "stats": null
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "similarity": {
+              "value": 4.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic similarity between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format SIMILARITY: 4. The similarity should be a score between 0 and 10.\\n\\nRESPONSE 1: Debes presentar tu DNI y una factura reciente.\\n\\nRESPONSE 2: Se requiere el DNI, una factura actual y un justificante de ingresos..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-qf3exqvcj9vpnqjp2u0o",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "SIMILARITY: 7.8\n\nThe two responses are quite similar as they both mention the need to provide a valid DNI and a recent factura. However, RESPONSE 2 adds an additional requirement of a justificante de ingresos, which slightly reduces the similarity score to 7.8 instead of 10. The score is determined based on the overall content match between the two responses.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754647169,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 82,
+              "prompt_tokens": 102,
+              "total_tokens": 184
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic completness between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format COMPLETNESS: 4. The completness should be a score between 0 and 5.\\n\\nRESPONSE 1: Debes presentar tu DNI y una factura reciente.\\n\\nRESPONSE 2: Se requiere el DNI, una factura actual y un justificante de ingresos..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-xgye9b0328k6ucqjv1u2if",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "COMPLETNESS: 4\n\nThe two responses address the requirements but fall short in one aspect. The first response mentions providing a recent DNI and a recent factura, while the second adds the need for a justificante de ingresos (evidence of income). To achieve a higher score, it would be beneficial to specify that all three elements (DNI, factura actual y justificante de ingresos) should be provided together in one response. However, since both responses cover two out of the three necessary components and the third is implied in the context of a typical requirement for such documents, they still demonstrate a high level of completeness.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754647248,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 131,
+              "prompt_tokens": 106,
+              "total_tokens": 237
+            },
+            "stats": {}
+          }
+        }
+      ]
+    }
+  ]
+}

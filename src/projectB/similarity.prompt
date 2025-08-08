@@ -1,0 +1,1 @@
+Respond in the following format SIMILARITY: 4. The similarity should be a score between 0 and 10.\n\nRESPONSE 1: {{prediction}}\n\nRESPONSE 2: {{ground_truth}}.\n\n

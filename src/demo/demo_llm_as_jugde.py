@@ -42,7 +42,7 @@ response = client.evaluation.live(
                             "model": {
                                 "api_endpoint": {
                                     "url": "http://host.docker.internal:1234/v1",
-                                    "model_id": EVAL_LLM_NAME
+                                    "model_id": "nvidia_llama-3.1-nemotron-nano-8b-v1"
                                 }
                             },
                             "template": {

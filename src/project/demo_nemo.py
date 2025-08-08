@@ -22,7 +22,7 @@ response = client.evaluation.live(
     namespace="my-organization",
     config={
         "type": "custom",
-        "timeout": 9999999999999,
+        "timeout": None,
         "tasks": {
             "check-refusal": {
                 "type": "data",
@@ -33,7 +33,7 @@ response = client.evaluation.live(
                             "model": {
                                 "api_endpoint": {
                                     "url": "http://host.docker.internal:1234/v1",
-                                    "model_id": "nvidia_llama-3.1-nemotron-nano-8b-v1"
+                                    "model_id": "openai/gpt-oss-20b"
                                 }
                             },
                             "template": {
