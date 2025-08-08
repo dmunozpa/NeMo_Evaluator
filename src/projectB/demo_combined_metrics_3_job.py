@@ -8,7 +8,7 @@ client = NeMoMicroservices(
 
 
 def leer_prompt(name):
-    with open(f"{name}.prompt", encoding="utf-8") as f:
+    with open(f"./prompts/{name}.prompt", encoding="utf-8") as f:
         return f.read()
 
 
