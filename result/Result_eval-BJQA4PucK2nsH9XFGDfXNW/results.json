@@ -1,0 +1,318 @@
+{
+  "metricas_combinadas_3": [
+    {
+      "item": {
+        "id": "1",
+        "input": "\u00bfCu\u00e1l es el tipo de inter\u00e9s actual de un dep\u00f3sito a plazo fijo?",
+        "prediction": "El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.",
+        "ground_truth": "Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "similaridad": {
+          "scores": {
+            "similarity": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "completness": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        },
+        "tono_adecuado": {
+          "scores": {
+            "tono_resultado": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "openai/gpt-oss-20b",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic similarity between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format SIMILARITY: 4. The similarity should be a score between 0 and 10.\\n\\nRESPONSE 1: El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\\n\\nRESPONSE 2: Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-dsxwwkf9qyjfd9a0mc7wn",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "Need to compute similarity. Both talk about 2.5% interest for 12-month deposits. Very similar. Score maybe 9.SIMILARITY: 9",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754900809,
+            "model": "openai/gpt-oss-20b",
+            "object": "chat.completion",
+            "system_fingerprint": "openai/gpt-oss-20b",
+            "usage": {
+              "completion_tokens": 34,
+              "prompt_tokens": 167,
+              "total_tokens": 201
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "openai/gpt-oss-20b",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic completness between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format COMPLETNESS: 4. The completness should be a score between 0 and 5.\\n\\nRESPONSE 1: El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\\n\\nRESPONSE 2: Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-xxk0ehtryjj4h6ril71jl",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "We need to evaluate semantic completeness between two responses. They both state same info: interest rate 2.5% for 12 months deposits. Both complete? Score maybe 4 or 5. Slight difference: Response1 says \"El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\" Response2 adds \"Actualmente,\" and period. Essentially identical content. So completeness high. I'd give 5.COMPLETNESS: 5",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754900952,
+            "model": "openai/gpt-oss-20b",
+            "object": "chat.completion",
+            "system_fingerprint": "openai/gpt-oss-20b",
+            "usage": {
+              "completion_tokens": 93,
+              "prompt_tokens": 170,
+              "total_tokens": 263
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "openai/gpt-oss-20b",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic tone between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Eval\u00faa si el tono de la respuesta es adecuado para el contexto. Escala del 1 (muy inadecuado) al 5 (perfectamente adecuado). \nBasandote en la pregunta:\nObteniendo la respuesta: El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\nTono correcto ser\u00eda este: {ground_truth}}\nLa respuesta ser\u00e1 TONO_RESULTADO: valor"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-644d13pqvxknk59yv9tor8",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "We need to evaluate tone of the answer. But we don't have the answer content? The user says \"Obteniendo la respuesta: El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\" That seems like the response. We must rate its tone suitability compared to expected tone ground_truth. We don't know ground_truth. Maybe assume it's neutral factual. So rating maybe 4? But unclear. Probably give 4.TONO_RESULTADO: 4",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754901072,
+            "model": "openai/gpt-oss-20b",
+            "object": "chat.completion",
+            "system_fingerprint": "openai/gpt-oss-20b",
+            "usage": {
+              "completion_tokens": 96,
+              "prompt_tokens": 171,
+              "total_tokens": 267
+            },
+            "stats": {}
+          }
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "2",
+        "input": "\u00bfCu\u00e1les son los requisitos para abrir una cuenta corriente?",
+        "prediction": "Debes presentar tu DNI y una factura reciente.",
+        "ground_truth": "Se requiere el DNI, una factura actual y un justificante de ingresos."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "similaridad": {
+          "scores": {
+            "similarity": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "completness": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        },
+        "tono_adecuado": {
+          "scores": {
+            "tono_resultado": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "openai/gpt-oss-20b",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic similarity between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format SIMILARITY: 4. The similarity should be a score between 0 and 10.\\n\\nRESPONSE 1: Debes presentar tu DNI y una factura reciente.\\n\\nRESPONSE 2: Se requiere el DNI, una factura actual y un justificante de ingresos..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-6k3t1rvgsekc2rq36hgrl",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "Need to compute similarity. Both mention DNI and invoice/factura, similar content. Likely high similarity around 8 or 9. I'll give 8.SIMILARITY: 8",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754901214,
+            "model": "openai/gpt-oss-20b",
+            "object": "chat.completion",
+            "system_fingerprint": "openai/gpt-oss-20b",
+            "usage": {
+              "completion_tokens": 39,
+              "prompt_tokens": 153,
+              "total_tokens": 192
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "openai/gpt-oss-20b",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic completness between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format COMPLETNESS: 4. The completness should be a score between 0 and 5.\\n\\nRESPONSE 1: Debes presentar tu DNI y una factura reciente.\\n\\nRESPONSE 2: Se requiere el DNI, una factura actual y un justificante de ingresos..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-jltoienlauddvc88uuw30t",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "We need to evaluate semantic completeness between two responses. They are Spanish. Both mention documents needed: DNI and invoice; response2 adds \"justificante de ingresos\". So response1 is missing that extra requirement. Thus completeness relative? Probably 4 out of 5? Maybe 3 because partially missing. I'll give 4.COMPLETNESS: 4",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754901303,
+            "model": "openai/gpt-oss-20b",
+            "object": "chat.completion",
+            "system_fingerprint": "openai/gpt-oss-20b",
+            "usage": {
+              "completion_tokens": 71,
+              "prompt_tokens": 156,
+              "total_tokens": 227
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "openai/gpt-oss-20b",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic tone between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Eval\u00faa si el tono de la respuesta es adecuado para el contexto. Escala del 1 (muy inadecuado) al 5 (perfectamente adecuado). \nBasandote en la pregunta:\nObteniendo la respuesta: Debes presentar tu DNI y una factura reciente.\nTono correcto ser\u00eda este: {ground_truth}}\nLa respuesta ser\u00e1 TONO_RESULTADO: valor"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-ms3ymue1c5pkfybttha1ne",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "We need to output \"TONO_RESULTADO: value\". We don't have ground truth. Assume answer likely 3? Probably evaluate tone. Let's give 4.TONO_RESULTADO: 4",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754901423,
+            "model": "openai/gpt-oss-20b",
+            "object": "chat.completion",
+            "system_fingerprint": "openai/gpt-oss-20b",
+            "usage": {
+              "completion_tokens": 39,
+              "prompt_tokens": 163,
+              "total_tokens": 202
+            },
+            "stats": {}
+          }
+        }
+      ]
+    }
+  ]
+}

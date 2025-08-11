@@ -8,7 +8,7 @@ client = NeMoMicroservices(base_url="http://localhost:7331")
 model_target = {
     "api_endpoint": {
         "url": "http://host.docker.internal:1234/v1",
-        "model_id": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+        "model_id": "openai/gpt-oss-20b",
     }
 }
 

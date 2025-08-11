@@ -1,5 +1,6 @@
 import os
 from nemo_microservices import NeMoMicroservices
+from datetime import datetime
 
 # Initialize the client
 client = NeMoMicroservices(
@@ -10,6 +11,7 @@ client = NeMoMicroservices(
 jobs = client.evaluation.jobs.list()
 
 # Iterate through the jobs
-print("\t| Job ID \t| Status \t| Created |")
+print("| Job ID \t| Status \t| Created | Updated | Processing Time")
 for job in jobs:
-    print(f"| {job.id} | {job.status} | {job.created_at} | ")
+    diff = round((job.updated_at - job.created_at).total_seconds(), 2)
+    print(f"| {job.id} | {job.status} | {job.created_at} |{job.updated_at} | {diff} seg ")

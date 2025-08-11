@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "id": "evaluation_result-AkL6MDDDak8HSyfgDF7UDM",
+  "description": null,
+  "type_prefix": null,
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-11T06:43:58.943123",
+  "updated_at": "2025-08-11T06:43:58.943191",
+  "custom_fields": {},
+  "ownership": null,
+  "job": "eval-NtWwihDMtKXRi3HuGSeXCn",
+  "tasks": {
+    "metricas_combinadas_3": {
+      "metrics": {
+        "similaridad": {
+          "scores": {
+            "similarity": {
+              "value": 8.45,
+              "stats": {
+                "count": 2,
+                "sum": 16.9,
+                "sum_squared": null,
+                "min": null,
+                "max": null,
+                "mean": 8.45,
+                "variance": null,
+                "stddev": null,
+                "stderr": null
+              }
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "completness": {
+              "value": 4.25,
+              "stats": {
+                "count": 2,
+                "sum": 8.5,
+                "sum_squared": null,
+                "min": null,
+                "max": null,
+                "mean": 4.25,
+                "variance": null,
+                "stddev": null,
+                "stderr": null
+              }
+            }
+          }
+        },
+        "tono_adecuado": {
+          "scores": {
+            "tono_resultado": {
+              "value": 0.0,
+              "stats": {
+                "count": 2,
+                "sum": 0.0,
+                "sum_squared": null,
+                "min": null,
+                "max": null,
+                "mean": 0.0,
+                "variance": null,
+                "stddev": null,
+                "stderr": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "groups": {},
+  "files_url": null
+}

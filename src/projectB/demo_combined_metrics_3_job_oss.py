@@ -11,8 +11,8 @@ def leer_prompt(name):
     with open(f"./prompts/{name}.prompt", encoding="utf-8") as f:
         return f.read()
 
-#model_id = "openai/gpt-oss-20b"
-model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
+model_id = "openai/gpt-oss-20b"
+#model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
 
 
 # Run a combined metrics live evaluation
@@ -38,7 +38,7 @@ job = client.evaluation.jobs.create(
                                 "messages": [
                                     {
                                         "role": "system",
-                                        "content": "Your task is to evaluate the semantic similarity between two responses."
+                                        "content": "Your task is to evaluate the semantic similarity between two responses. Response just hte metric with this format: SIMILARITY: X. "
                                     },
                                     {
                                         "role": "user",
@@ -51,7 +51,7 @@ job = client.evaluation.jobs.create(
                                     "type": "int",
                                     "parser": {
                                         "type": "regex",
-                                        "pattern": "SIMILARITY: (\d+(\.\d+)?)"
+                                        "pattern": "SIMILARITY: (\\d)"
                                     }
                                 }
                             }
@@ -83,7 +83,7 @@ job = client.evaluation.jobs.create(
                                     "type": "int",
                                     "parser": {
                                         "type": "regex",
-                                        "pattern": "COMPLETNESS: (\d+(\.\d+)?)"
+                                        "pattern": "COMPLETNESS: (\\d)"
                                     }
                                 }
                             }
@@ -115,7 +115,7 @@ job = client.evaluation.jobs.create(
                                     "type": "int",
                                     "parser": {
                                         "type": "regex",
-                                        "pattern": "TONO_RESULTADO: (\d+(\.\d+)?)"
+                                        "pattern": "TONO_RESULTADO: (\\d)"
                                     }
                                 }
                             }

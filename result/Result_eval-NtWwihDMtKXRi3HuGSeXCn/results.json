@@ -1,0 +1,318 @@
+{
+  "metricas_combinadas_3": [
+    {
+      "item": {
+        "id": "1",
+        "input": "\u00bfCu\u00e1l es el tipo de inter\u00e9s actual de un dep\u00f3sito a plazo fijo?",
+        "prediction": "El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.",
+        "ground_truth": "Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "similaridad": {
+          "scores": {
+            "similarity": {
+              "value": 8.6,
+              "stats": null
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "completness": {
+              "value": 4.5,
+              "stats": null
+            }
+          }
+        },
+        "tono_adecuado": {
+          "scores": {
+            "tono_resultado": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic similarity between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format SIMILARITY: 4. The similarity should be a score between 0 and 10.\\n\\nRESPONSE 1: El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\\n\\nRESPONSE 2: Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-z6m0pyrzkl93mxo6x7ybk",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "SIMILARITY: 8.6\n\n(The responses are very similar in meaning and structure, sharing the same interest rate percentage and time frame. However, they differ slightly in phrasing, with one mentioning \"de inter\u00e9s es\" (Spanish for \"is of interest\") while the other uses a more direct statement. This slight difference results in a score just below 9 out of 10.)",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754894641,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 81,
+              "prompt_tokens": 119,
+              "total_tokens": 200
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic completness between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format COMPLETNESS: 4. The completness should be a score between 0 and 5.\\n\\nRESPONSE 1: El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\\n\\nRESPONSE 2: Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-ajhqpbgeclddzistdsrls",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "COMPLETNESS: 4.5 \n\nThe two responses are very similar in meaning and convey the same information with minor differences in wording structure (e.g., \"del\" vs \"actualmente\"). Both responses clearly state that deposits for a fixed term of one year yield a 2.5% interest rate, making them semantically equivalent and highly complete in conveying this fact. However, to further enhance completeness, it would be beneficial to consider adding the time frame (e.g., \"para un a\u00f1o\") or any other relevant details about the terms and conditions if applicable, but such information is not necessary for assessing semantic completeness as presented.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754894715,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 129,
+              "prompt_tokens": 123,
+              "total_tokens": 252
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic tone between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Eval\u00faa si el tono de la respuesta es adecuado para el contexto. Escala del 1 (muy inadecuado) al 5 (perfectamente adecuado). \nBasandote en la pregunta:\nObteniendo la respuesta: El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.\nTono correcto ser\u00eda este: {ground_truth}}\nLa respuesta ser\u00e1 TONO_RESULTADO: valor"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-o1v8t9cfxgi3g1owoq63ym",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "<TONO_RESULTADO: 4>\n\n**Justificaci\u00f3n:** \n- **Context**: La pregunta menciona un tipo de inter\u00e9s (2,5%) para dep\u00f3sitos a 12 meses.\n- **Respuesta dada**: Se proporciona el porciento como \"El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses\".\n- **Evaluaci\u00f3n del tono**:\n  - **Adecuado (4)**: La respuesta mantiene un tono neutral y informativo. Ofrece la informaci\u00f3n relevante sin agregar cualquier emoci\u00f3n o jactancia que altere el significado del contenido.\n  - **No es inadecuado**: No contiene detalles emocionales, ofensivos, mentales ni cualquier elemento que podr\u00eda ser considerada inapropada para un tema como este. \n  - **Adecuado no es perfectamente adecuado (5)**: Aunque es correcto en tono, se puede mejorar con una presentaci\u00f3n m\u00e1s profesional o directa sobre el porciento, aunque el actual respuesta ya proporciona la informaci\u00f3n necesaria de manera clara y breve.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754894824,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 241,
+              "prompt_tokens": 125,
+              "total_tokens": 366
+            },
+            "stats": {}
+          }
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "2",
+        "input": "\u00bfCu\u00e1les son los requisitos para abrir una cuenta corriente?",
+        "prediction": "Debes presentar tu DNI y una factura reciente.",
+        "ground_truth": "Se requiere el DNI, una factura actual y un justificante de ingresos."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "similaridad": {
+          "scores": {
+            "similarity": {
+              "value": 8.3,
+              "stats": null
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "completness": {
+              "value": 4.0,
+              "stats": null
+            }
+          }
+        },
+        "tono_adecuado": {
+          "scores": {
+            "tono_resultado": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic similarity between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format SIMILARITY: 4. The similarity should be a score between 0 and 10.\\n\\nRESPONSE 1: Debes presentar tu DNI y una factura reciente.\\n\\nRESPONSE 2: Se requiere el DNI, una factura actual y un justificante de ingresos..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-aoycttcbdxu6wvlhz2xl4y",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "SIMILARITY: 8.3\n\nThe two responses are very similar in their main points (DNI required, recent/factual) and share some additional details that enhance the requirements. However, there is a slight difference in the way they are phrased and presented. The second response includes more specific elements such as \"una factura actual\" and \"justificante de ingresos\", which could be seen as an improvement but also slightly differs from the first statement's brevity. Since both statements convey essentially the same requirement with high confidence, a similarity score of 8.3 is given to reflect their overall alignment while acknowledging minor differences in detail and presentation.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754895033,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 136,
+              "prompt_tokens": 102,
+              "total_tokens": 238
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic completness between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Respond in the following format COMPLETNESS: 4. The completness should be a score between 0 and 5.\\n\\nRESPONSE 1: Debes presentar tu DNI y una factura reciente.\\n\\nRESPONSE 2: Se requiere el DNI, una factura actual y un justificante de ingresos..\\n\\n"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-5qlxvgs2fkmae86oizuruo",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "COMPLETNESS: 4. \n\nBoth responses are largely correct and address the necessary requirements of providing a valid DNI, a recent invoice, and a receipt for the billing period. However, Response 1 is slightly less complete as it does not explicitly mention the need for a justificante de ingresos.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754895144,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 64,
+              "prompt_tokens": 106,
+              "total_tokens": 170
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Your task is to evaluate the semantic tone between two responses."
+              },
+              {
+                "role": "user",
+                "content": "Eval\u00faa si el tono de la respuesta es adecuado para el contexto. Escala del 1 (muy inadecuado) al 5 (perfectamente adecuado). \nBasandote en la pregunta:\nObteniendo la respuesta: Debes presentar tu DNI y una factura reciente.\nTono correcto ser\u00eda este: {ground_truth}}\nLa respuesta ser\u00e1 TONO_RESULTADO: valor"
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-vhot3eod2fflaouw1990c",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "Para evaluar el tono de la respuesta, necesito ver el texto que fue proporcionado como respuesta. Sin embargo, me inform\u00e9 a trav\u00e9s del usuario que no est\u00e1 disponible. Para ayudarte a evaluar el tono en un contexto similar, te ofrezco una gu\u00eda general y te proporcionar\u00e9 ejemplos de c\u00f3mo responder\u00eda si la respuesta fuera uno de los siguientes textos:\n\n**Ejemplo 1: Respuesta con tono \"ground\" (considerado inadecuado)**\n* Texto: \"\u00bfQu\u00e9 hayas haciendo? \u00bfO \u00bfno te est\u00e1s queblando?\"\n* Evaluaci\u00f3n: 1. Tono muy inadecuado, ya que la pregunta es imprecisa y falta el llamado directo a la presentaci\u00f3n de informaci\u00f3n espec\u00edfica.\n\n**Ejemplo 2: Respuesta con tono \"neutral\" (considerado adecuado)**\n* Texto: \"Por favor, si tienes la opci\u00f3n, podr\u00eda ser \u00fatil para m\u00ed saber sobre tu factura reciente. \u00bfPuedes proporcionar el n\u00famero o el link?\"\n* Evaluaci\u00f3n: 3. Tono neutral, ya que busca informaci\u00f3n b\u00e1sicamente necesaria y no es impertinento.\n\n**Ejemplo 3: Respuesta con tono \"neutral\" (considerado adecuado)**\n* Texto: \"Por favor, comparte la factura reciente para que pueda verificarla de manera completa. Gracias por tu ayuda.\"\n* Evaluaci\u00f3n: 4. Tono muy adecuado, ya que es cort\u00e9s, busca informaci\u00f3n espec\u00edfica y muestra gratitud.\n\n**Ejemplo 4: Respuesta con tono \"positive\" (considerado perfectamente adecuado)**\n* Texto: \"Por favor, comparte la factura reciente. Estoy comprometido para asegurarme de todo est\u00e1 bien. Gracias.\"\n* Evaluaci\u00f3n: 5. Tono perfectamente adecuado, ya que es cort\u00e9s, busca informaci\u00f3n espec\u00edfica y muestra agradecimiento.\n\nPara determinar el **TONO_RESULTADO** seg\u00fan la respuesta proporcionada (no visible en este ejemplo), considera:\n\n- Si la respuesta muestra preocupaci\u00f3n por la brecha de informaci\u00f3n o solicita datos con cortes, puede estar cerca de tono 3.\n- Si la respuesta es imprecisa, falta llamados directos y es impertinenta, podr\u00eda ser evaluada como tono 1.\n- Si la respuesta es cort\u00e9s, busca informaci\u00f3n precisa y muestra gratitud, podr\u00edas tener un tono entre 3 y 5.\n\nPor favor, proporciona el texto que se atapa de manera espec\u00edfica para que pueda evaluar con m\u00e1s precisi\u00f3n el **TONO_RESULTADO**.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754895217,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 574,
+              "prompt_tokens": 117,
+              "total_tokens": 691
+            },
+            "stats": {}
+          }
+        }
+      ]
+    }
+  ]
+}

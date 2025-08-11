@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0",
+  "id": "eval-6V2FkPXZBVgs4fXcdg3Ei3",
+  "description": null,
+  "type_prefix": "eval",
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-11T08:51:03.427821",
+  "updated_at": "2025-08-11T09:19:11.328530",
+  "custom_fields": {},
+  "ownership": null,
+  "status": "created",
+  "status_details": {
+    "message": null,
+    "task_status": {
+      "metricas_combinadas_3": "completed"
+    },
+    "progress": 100.0
+  },
+  "config": {
+    "schema_version": "1.0",
+    "id": "eval-config-CjEDk73vTiBgVNfPw56vsz",
+    "description": null,
+    "type_prefix": "eval-config",
+    "namespace": "default",
+    "project": "demo_3_metricas",
+    "created_at": "2025-08-11T08:51:03.328555",
+    "updated_at": "2025-08-11T08:51:03.328579",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-config-CjEDk73vTiBgVNfPw56vsz",
+    "type": "custom",
+    "params": null,
+    "tasks": {
+      "metricas_combinadas_3": {
+        "type": "data",
+        "params": null,
+        "metrics": {
+          "similaridad": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "openai/gpt-oss-20b"
+                },
+                "id": "model-2AQP76T277SWfAFUNGYnzh",
+                "name": "model-2AQP76T277SWfAFUNGYnzh"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Your task is to evaluate the semantic similarity between two responses. Response just hte metric with this format: SIMILARITY: X. "
+                  },
+                  {
+                    "role": "user",
+                    "content": "Respond in the following format SIMILARITY: 4. The similarity should be a score between 0 and 10.\\n\\nRESPONSE 1: {{prediction}}\\n\\nRESPONSE 2: {{ground_truth}}.\\n\\n"
+                  }
+                ]
+              },
+              "scores": {
+                "similarity": {
+                  "type": "int",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "SIMILARITY: (\\d)"
+                  }
+                }
+              }
+            }
+          },
+          "completitud": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "openai/gpt-oss-20b"
+                },
+                "id": "model-Pkxzc89g9BQsXe1GBjoeNA",
+                "name": "model-Pkxzc89g9BQsXe1GBjoeNA"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Your task is to evaluate the semantic completness between two responses."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Respond in the following format COMPLETNESS: 4. The completness should be a score between 0 and 5.\\n\\nRESPONSE 1: {{prediction}}\\n\\nRESPONSE 2: {{ground_truth}}.\\n\\n"
+                  }
+                ]
+              },
+              "scores": {
+                "completness": {
+                  "type": "int",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "COMPLETNESS: (\\d)"
+                  }
+                }
+              }
+            }
+          },
+          "tono_adecuado": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "openai/gpt-oss-20b"
+                },
+                "id": "model-J7u5kmNTtzsxUCTxRdPUck",
+                "name": "model-J7u5kmNTtzsxUCTxRdPUck"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Your task is to evaluate the semantic tone between two responses."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Eval\u00faa si el tono de la respuesta es adecuado para el contexto. Escala del 1 (muy inadecuado) al 5 (perfectamente adecuado). \nBasandote en la pregunta:\nObteniendo la respuesta: {{prediction}}\nTono correcto ser\u00eda este: {ground_truth}}\nLa respuesta ser\u00e1 TONO_RESULTADO: valor"
+                  }
+                ]
+              },
+              "scores": {
+                "tono_resultado": {
+                  "type": "int",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "TONO_RESULTADO: (\\d)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dataset": null
+      }
+    },
+    "groups": null
+  },
+  "target": {
+    "schema_version": "1.0",
+    "id": "eval-target-TVj6UhGmLBRivkNCgCbpD5",
+    "description": null,
+    "type_prefix": "eval-target",
+    "namespace": "default",
+    "project": null,
+    "created_at": "2025-08-11T08:51:03.346283",
+    "updated_at": "2025-08-11T08:51:03.346285",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-target-TVj6UhGmLBRivkNCgCbpD5",
+    "type": "rows",
+    "cached_outputs": null,
+    "model": null,
+    "retriever": null,
+    "rag": null,
+    "rows": [
+      {
+        "id": "1",
+        "input": "\u00bfCu\u00e1l es el tipo de inter\u00e9s actual de un dep\u00f3sito a plazo fijo?",
+        "prediction": "El tipo de inter\u00e9s es del 2,5% para dep\u00f3sitos a 12 meses.",
+        "ground_truth": "Actualmente, los dep\u00f3sitos a plazo fijo a 12 meses ofrecen un inter\u00e9s del 2,5%."
+      },
+      {
+        "id": "2",
+        "input": "\u00bfCu\u00e1les son los requisitos para abrir una cuenta corriente?",
+        "prediction": "Debes presentar tu DNI y una factura reciente.",
+        "ground_truth": "Se requiere el DNI, una factura actual y un justificante de ingresos."
+      }
+    ],
+    "dataset": null
+  },
+  "result": "evaluation_result-63dpahezyFF2d5vYJb9i1g",
+  "output_files_url": null
+}
