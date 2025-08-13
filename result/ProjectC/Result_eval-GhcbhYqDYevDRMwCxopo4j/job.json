@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "id": "eval-GhcbhYqDYevDRMwCxopo4j",
+  "description": null,
+  "type_prefix": "eval",
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-13T11:24:59.636749",
+  "updated_at": "2025-08-13T11:41:09.661007",
+  "custom_fields": {},
+  "ownership": null,
+  "status": "created",
+  "status_details": {
+    "message": null,
+    "task_status": {
+      "metricas_combinadas_3": "completed"
+    },
+    "progress": 100.0
+  },
+  "config": {
+    "schema_version": "1.0",
+    "id": "eval-config-Db8qWLp8yiiDTd1XezopL1",
+    "description": null,
+    "type_prefix": "eval-config",
+    "namespace": "default",
+    "project": "demo_oxigeno",
+    "created_at": "2025-08-13T11:24:59.547773",
+    "updated_at": "2025-08-13T11:24:59.547784",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-config-Db8qWLp8yiiDTd1XezopL1",
+    "type": "custom",
+    "params": null,
+    "tasks": {
+      "metricas_combinadas_3": {
+        "type": "data",
+        "params": null,
+        "metrics": {
+          "similaridad": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "openai/gpt-oss-20b"
+                },
+                "id": "model-8xUMZbemSbXBUKvnbbcYCU",
+                "name": "model-8xUMZbemSbXBUKvnbbcYCU"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una o m\u00e1s respuestas candidatas, y luego emitir una evaluaci\u00f3n entre 0 y 10, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n\\n\\n METRIC_NAME: [NAME] JUSTIFICACION: [Detalle justificacion]",
+                    "max_tokens": 100,
+                    "temperature": 0,
+                    "top_p": 0.9
+                  },
+                  {
+                    "role": "user",
+                    "content": "This METRIC_NAME is SIMILARITY. Provide the evalution about the similariy based on the following info: \\n\\nRESPONSE 1: {{prediction}}\\n\\nRESPONSE 2: {{ground_truth}}.\\n\\n Respond the METRIC_VALUE should be between 1 and 10."
+                  }
+                ]
+              },
+              "scores": {
+                "similaridad_score": {
+                  "type": "float",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "METRIC_VALUE: (\\d)"
+                  }
+                }
+              }
+            }
+          },
+          "completitud": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "openai/gpt-oss-20b"
+                },
+                "id": "model-SAo93Yn4fEDXyW2Wc9Uk6r",
+                "name": "model-SAo93Yn4fEDXyW2Wc9Uk6r"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una o m\u00e1s respuestas candidatas, y luego emitir una evaluaci\u00f3n entre 0 y 10, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n\\n\\n METRIC_NAME: [NAME] JUSTIFICACION: [Detalle justificacion]",
+                    "max_tokens": 100,
+                    "temperature": 0,
+                    "top_p": 0.9
+                  },
+                  {
+                    "role": "user",
+                    "content": "This METRIC_NAME is COMPLETNESS. Provide the evalution about the completness based on the following info: \\n\\nRESPONSE 1: {{prediction}}\\n\\nRESPONSE 2: {{ground_truth}}.\\n\\n Respond the METRIC_VALUE should be between 1 and 10."
+                  }
+                ]
+              },
+              "scores": {
+                "completitud_score": {
+                  "type": "float",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "METRIC_VALUE: (\\d)"
+                  }
+                }
+              }
+            }
+          },
+          "tono_adecuado": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "openai/gpt-oss-20b"
+                },
+                "id": "model-DPokDnjKQqJMKN9kTbubZh",
+                "name": "model-DPokDnjKQqJMKN9kTbubZh"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una o m\u00e1s respuestas candidatas, y luego emitir una evaluaci\u00f3n entre 0 y 10, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n\\n\\n METRIC_NAME: [NAME] JUSTIFICACION: [Detalle justificacion]",
+                    "max_tokens": 100,
+                    "temperature": 0,
+                    "top_p": 0.9
+                  },
+                  {
+                    "role": "user",
+                    "content": "El METRIC_NAME es TONO_ADECUADO. Evalua si el tono de la respuesta es el adecuado para un contexto donde eres un asitente de una entidad bancaria. Escala del 0 (muy inadecuado) al 10 (perfectamente adecuado). Basandote en la pregunta:{{input}}, siendo la respuesta: {{prediction}}, tomando de referencia {{ground_truth}}. El resultado del METRIC_VALUE ser\u00e1 entre 1 y 10."
+                  }
+                ]
+              },
+              "scores": {
+                "tono_resultado": {
+                  "type": "float",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "METRIC_VALUE: (\\d)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dataset": null
+      }
+    },
+    "groups": null
+  },
+  "target": {
+    "schema_version": "1.0",
+    "id": "eval-target-NbXpobfyQRMDBi3d8Burmv",
+    "description": null,
+    "type_prefix": "eval-target",
+    "namespace": "default",
+    "project": null,
+    "created_at": "2025-08-13T11:24:59.559860",
+    "updated_at": "2025-08-13T11:24:59.559863",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-target-NbXpobfyQRMDBi3d8Burmv",
+    "type": "rows",
+    "cached_outputs": null,
+    "model": null,
+    "retriever": null,
+    "rag": null,
+    "rows": [
+      {
+        "id": "1",
+        "input": "\u00bfHasta que edad me pueden dar una hipoteca Oxigeno?",
+        "prediction": "Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.",
+        "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas."
+      }
+    ],
+    "dataset": null
+  },
+  "result": "evaluation_result-AztiJS1iu6KSDzp8e4MXSR",
+  "output_files_url": null
+}

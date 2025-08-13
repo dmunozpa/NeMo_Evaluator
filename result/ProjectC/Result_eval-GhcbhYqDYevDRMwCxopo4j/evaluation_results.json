@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "id": "evaluation_result-AztiJS1iu6KSDzp8e4MXSR",
+  "description": null,
+  "type_prefix": null,
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-13T11:25:03.140317",
+  "updated_at": "2025-08-13T11:25:03.140324",
+  "custom_fields": {},
+  "ownership": null,
+  "job": "eval-GhcbhYqDYevDRMwCxopo4j",
+  "tasks": {
+    "metricas_combinadas_3": {
+      "metrics": {
+        "similaridad": {
+          "scores": {
+            "similaridad_score": {
+              "value": 8.0,
+              "stats": {
+                "count": 1,
+                "sum": 8.0,
+                "sum_squared": null,
+                "min": null,
+                "max": null,
+                "mean": 8.0,
+                "variance": null,
+                "stddev": null,
+                "stderr": null
+              }
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "completitud_score": {
+              "value": 8.0,
+              "stats": {
+                "count": 1,
+                "sum": 8.0,
+                "sum_squared": null,
+                "min": null,
+                "max": null,
+                "mean": 8.0,
+                "variance": null,
+                "stddev": null,
+                "stderr": null
+              }
+            }
+          }
+        },
+        "tono_adecuado": {
+          "scores": {
+            "tono_resultado": {
+              "value": 8.0,
+              "stats": {
+                "count": 1,
+                "sum": 8.0,
+                "sum_squared": null,
+                "min": null,
+                "max": null,
+                "mean": 8.0,
+                "variance": null,
+                "stddev": null,
+                "stderr": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "groups": {},
+  "files_url": null
+}

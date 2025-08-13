@@ -1,0 +1,176 @@
+{
+  "metricas_combinadas_3": [
+    {
+      "item": {
+        "id": "1",
+        "input": "\u00bfHasta que edad me pueden dar una hipoteca Oxigeno?",
+        "prediction": "Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.",
+        "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "similaridad": {
+          "scores": {
+            "similaridad_score": {
+              "value": 8.0,
+              "stats": null
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "completitud_score": {
+              "value": 8.0,
+              "stats": null
+            }
+          }
+        },
+        "tono_adecuado": {
+          "scores": {
+            "tono_resultado": {
+              "value": 8.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "openai/gpt-oss-20b",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una o m\u00e1s respuestas candidatas, y luego emitir una evaluaci\u00f3n entre 0 y 10, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n\\n\\n METRIC_NAME: [NAME] JUSTIFICACION: [Detalle justificacion]",
+                "max_tokens": 100,
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "This METRIC_NAME is SIMILARITY. Provide the evalution about the similariy based on the following info: \\n\\nRESPONSE 1: Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.\\n\\nRESPONSE 2: Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas..\\n\\n Respond the METRIC_VALUE should be between 1 and 10."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-hughtb3ebsoycgcsixn78a",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 8.0  \n\n\\n\\n METRIC_NAME: SIMILARITY JUSTIFICACION: Las dos respuestas tratan el mismo tema (l\u00edmites de edad para la hipoteca seg\u00fan tipo de vivienda) y usan frases muy parecidas (\"hasta los 75 a\u00f1os\", \"segundas residencias\" o \"segunda vivienda\"). La redacci\u00f3n es diferente en algunos detalles, pero la informaci\u00f3n esencial coincide casi al 100\u202f%. Por ello se asigna una puntuaci\u00f3n alta (8 sobre 10).",
+                  "role": "assistant",
+                  "tool_calls": [],
+                  "reasoning": "Need similarity metric between responses. They are similar content: about age limits for first/second residence. Probably high similarity ~8. Provide justification. No accents."
+                }
+              }
+            ],
+            "created": 1755084308,
+            "model": "openai/gpt-oss-20b",
+            "object": "chat.completion",
+            "system_fingerprint": "openai/gpt-oss-20b",
+            "usage": {
+              "completion_tokens": 147,
+              "prompt_tokens": 291,
+              "total_tokens": 438
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "openai/gpt-oss-20b",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una o m\u00e1s respuestas candidatas, y luego emitir una evaluaci\u00f3n entre 0 y 10, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n\\n\\n METRIC_NAME: [NAME] JUSTIFICACION: [Detalle justificacion]",
+                "max_tokens": 100,
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "This METRIC_NAME is COMPLETNESS. Provide the evalution about the completness based on the following info: \\n\\nRESPONSE 1: Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.\\n\\nRESPONSE 2: Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas..\\n\\n Respond the METRIC_VALUE should be between 1 and 10."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-fmc3ynjhiuevafp74p3bwi",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 8.0  \n\n\\n\\nMETRIC_NAME: COMPLETNESS  \nJUSTIFICACION: Los dos textos proporcionan la informaci\u00f3n esencial sobre los l\u00edmites de edad para solicitar una hipoteca, indicando claramente los valores de 75 a\u00f1os para primera vivienda y 70 a\u00f1os para segunda vivienda. El RESPUESTA 2 a\u00f1ade contexto adicional al mencionar el plazo y que se aplica a los titulares mayores, lo cual mejora su exhaustividad respecto a la pregunta planteada. Sin embargo, ambos omiten otros posibles requisitos (por ejemplo, ingresos o condiciones de la hipoteca), por lo que no alcanzan una completitud absoluta.",
+                  "role": "assistant",
+                  "tool_calls": [],
+                  "reasoning": "Need to evaluate completeness: how well answers cover requirement? Both mention age limits. Response2 more detailed with conditions. So higher score maybe 8. Provide format."
+                }
+              }
+            ],
+            "created": 1755084633,
+            "model": "openai/gpt-oss-20b",
+            "object": "chat.completion",
+            "system_fingerprint": "openai/gpt-oss-20b",
+            "usage": {
+              "completion_tokens": 171,
+              "prompt_tokens": 290,
+              "total_tokens": 461
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "openai/gpt-oss-20b",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una o m\u00e1s respuestas candidatas, y luego emitir una evaluaci\u00f3n entre 0 y 10, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n\\n\\n METRIC_NAME: [NAME] JUSTIFICACION: [Detalle justificacion]",
+                "max_tokens": 100,
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "El METRIC_NAME es TONO_ADECUADO. Evalua si el tono de la respuesta es el adecuado para un contexto donde eres un asitente de una entidad bancaria. Escala del 0 (muy inadecuado) al 10 (perfectamente adecuado). Basandote en la pregunta:\u00bfHasta que edad me pueden dar una hipoteca Oxigeno?, siendo la respuesta: Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda., tomando de referencia Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas.. El resultado del METRIC_VALUE ser\u00e1 entre 1 y 10."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-awgxok0m6w4j83lomehyp",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 8.0  \n\n\\n\\n\\n METRIC_NAME: TONO_ADECUADO JUSTIFICACION: La respuesta es clara y directa, sin lenguaje informal ni emoticonos. Se mantiene un tono profesional y objetivo, t\u00edpico de un asistente bancario. No se utilizan t\u00e9rminos t\u00e9cnicos excesivos que pudieran confundir al cliente, pero tampoco resulta demasiado distante o impersonal. En consecuencia, el tono es adecuado para la situaci\u00f3n planteada.",
+                  "role": "assistant",
+                  "tool_calls": [],
+                  "reasoning": "Need to evaluate tone adequacy. The answer is factual, neutral. Should be suitable for bank assistant: yes. Score maybe 8 or 9. Provide format. No accents."
+                }
+              }
+            ],
+            "created": 1755084968,
+            "model": "openai/gpt-oss-20b",
+            "object": "chat.completion",
+            "system_fingerprint": "openai/gpt-oss-20b",
+            "usage": {
+              "completion_tokens": 141,
+              "prompt_tokens": 334,
+              "total_tokens": 475
+            },
+            "stats": {}
+          }
+        }
+      ]
+    }
+  ]
+}

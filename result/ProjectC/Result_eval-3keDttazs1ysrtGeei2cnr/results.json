@@ -1,0 +1,170 @@
+{
+  "metricas_combinadas_3": [
+    {
+      "item": {
+        "id": "1",
+        "input": "\u00bfHasta que edad me pueden dar una hipoteca Oxigeno",
+        "prediction": "Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.",
+        "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "similaridad": {
+          "scores": {
+            "similarity": {
+              "value": 7.0,
+              "stats": null
+            }
+          }
+        },
+        "completitud": {
+          "scores": {
+            "completness": {
+              "value": 9.0,
+              "stats": null
+            }
+          }
+        },
+        "tono_adecuado": {
+          "scores": {
+            "tono_resultado": {
+              "value": 9.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una o m\u00e1s respuestas candidatas, y luego emitir una evaluaci\u00f3n entre 0 y 10, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n\\n\\n METRIC_NAME: [NAME] JUSTIFICACION: [Detalle justificacion]",
+                "max_tokens": 100,
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "This METRIC_NAME is SIMILARITY. Provide the evalution about the similariy based on the following info: \\n\\nRESPONSE 1: Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.\\n\\nRESPONSE 2: Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas..\\n\\n Respond the METRIC_VALUE should be between 1 and 10."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-0r20y294p84xoxozav6vr",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 7.8 JUSTIFICACION: La respuesta 2 ofrece una buena definici\u00f3n general para la hipoteca Oxigeno, pero es menos espec\u00edfica que la respuesta 1 en cuanto a los l\u00edmites de edad para las primeras y segundas residencias respectivamente. La respuesta 1 establece un l\u00edmite claro de 75 a\u00f1os para las primeras vivencias y 70 a\u00f1os para las segundas, lo que proporciona una mayor claridad sobre los requisitos necesarios para solicitar esta hipoteca. Sin embargo, ambos respuestas muestran un buen nivel de conocimiento del tema, aunque la respuesta 1 es superior en t\u00e9rminos de precisi\u00f3n. Por lo tanto, le asigno una puntuaci\u00f3n de 7.8 que refleja un compromiso entre ambas respuestas en cuanto a su claridad y completamiento.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754997068,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 183,
+              "prompt_tokens": 248,
+              "total_tokens": 431
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una o m\u00e1s respuestas candidatas, y luego emitir una evaluaci\u00f3n entre 0 y 10, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n\\n\\n METRIC_NAME: [NAME] JUSTIFICACION: [Detalle justificacion]",
+                "max_tokens": 100,
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "This METRIC_NAME is COMPLETNESS. Provide the evalution about the completness based on the following info: \\n\\nRESPONSE 1: Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.\\n\\nRESPONSE 2: Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas..\\n\\n Respond the METRIC_VALUE should be between 1 and 10."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-zuioej9npwbbgde0xffe7s",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 9.5 JUSTIFICACION: La informaci\u00f3n proporcionada es suficiente para evaluar una alta calidad de Completeness, ya que ofrece un rango claro y detallado de edades v\u00e1legas para las primeras y segundas vivencias en el caso de contrataci\u00f3n de Hipotecas Oxigeno. No hay necesidad de m\u00e1s detalles espec\u00edficos adicionales, por lo tanto, la respuesta se eval\u00faa como muy completa con esta informaci\u00f3n. Sin embargo, mencionar que es posible que el plazo m\u00e1ximo haya cambiado desde la fecha de publicaci\u00f3n del problema para un ajuste m\u00e1s preciso en el futuro.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754997217,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 134,
+              "prompt_tokens": 248,
+              "total_tokens": 382
+            },
+            "stats": {}
+          }
+        },
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una o m\u00e1s respuestas candidatas, y luego emitir una evaluaci\u00f3n entre 0 y 10, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n\\n\\n METRIC_NAME: [NAME] JUSTIFICACION: [Detalle justificacion]",
+                "max_tokens": 100,
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "El METRIC_NAME es TONO_ADECUADO. Evalua si el tono de la respuesta es el adecuado para un contexto donde eres un asitente de una entidad bancaria. Escala del 0 (muy inadecuado) al 10 (perfectamente adecuado). Basandote en la pregunta:\u00bfHasta que edad me pueden dar una hipoteca Oxigeno, siendo la respuesta: Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda., tomando de referencia Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas.. El resultado del METRIC_VALUE ser\u00e1 entre 1 y 10."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-nqg36au809bchwfzj3h4i",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 9.8 JUSTIFICACI\u00d3N: \n\nEl tono de la respuesta se ajusta muy bien para un asistente de una entidad bancaria, ya que presenta informaci\u00f3n \u00fatil y precisa sobre los requisitos para el cr\u00e9dito hipotecario Oxigeno, destacando la importancia del l\u00edmite de edad para primera y segunda vivencia. Este tipo de respuesta demuestra su capacidad de comprender y transmitir detalles relevantes en un contexto profesional. Sin embargo, podr\u00eda ser mejor incluir una breve menci\u00f3n sobre el plazo de la hipoteca o c\u00f3mo solicitarlo, aunque se trae la pregunta misma como base de referencia. \n\nNota: La calificaci\u00f3n del 9.8 se asigna porque la respuesta es clara, precisa y bien estructurada, adecuada para un asistente bancario que debe proporcionar informaci\u00f3n detallada y relevante a los clientes sobre las condiciones requeridas para el cr\u00e9dito hipotecario Oxigeno.",
+                  "role": "assistant"
+                }
+              }
+            ],
+            "created": 1754997337,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 202,
+              "prompt_tokens": 302,
+              "total_tokens": 504
+            },
+            "stats": {}
+          }
+        }
+      ]
+    }
+  ]
+}
