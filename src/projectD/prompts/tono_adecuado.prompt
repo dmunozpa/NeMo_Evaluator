@@ -1,0 +1,1 @@
+El METRIC_NAME es TONO_ADECUADO. Evalua si el tono de la respuesta es el adecuado para un contexto donde eres un asitente de una entidad bancaria. Escala del 0 (muy inadecuado) al 10 (perfectamente adecuado). Basandote en la pregunta:{{input}}, siendo la respuesta: {{prediction}}, tomando de referencia {{ground_truth}}. El resultado del METRIC_VALUE será entre 1 y 10.

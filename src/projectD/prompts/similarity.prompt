@@ -1,0 +1,1 @@
+This METRIC_NAME is SIMILARITY. Provide the evalution about the similariy based on the following info: \n\nRESPONSE 1: {{prediction}}\n\nRESPONSE 2: {{ground_truth}}.\n\n Respond the METRIC_VALUE should be between 1 and 10.

@@ -52,7 +52,7 @@ job = client.evaluation.jobs.create(
                             },
                             "scores": {
                                 "similaridad_score": {
-                                    "type": "float",
+                                    "type": "int",
                                     "parser": {
                                         "type": "regex",
                                         "pattern": pattern_score,
@@ -87,7 +87,7 @@ job = client.evaluation.jobs.create(
                             },
                             "scores": {
                                 "completitud_score": {
-                                    "type": "float",
+                                    "type": "int",
                                     "parser": {
                                         "type": "regex",
                                         "pattern": pattern_score,
@@ -122,7 +122,7 @@ job = client.evaluation.jobs.create(
                             },
                             "scores": {
                                 "tono_resultado": {
-                                    "type": "float",
+                                    "type": "int",
                                     "parser": {
                                         "type": "regex",
                                         "pattern": pattern_score,
