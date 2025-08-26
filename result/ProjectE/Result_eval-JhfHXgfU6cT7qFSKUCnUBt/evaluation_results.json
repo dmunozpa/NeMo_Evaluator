@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "id": "evaluation_result-QwTN3i79azNyiN2396JJsL",
+  "description": null,
+  "type_prefix": null,
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-26T10:47:12.658373",
+  "updated_at": "2025-08-26T10:47:12.658376",
+  "custom_fields": {},
+  "ownership": null,
+  "job": "eval-JhfHXgfU6cT7qFSKUCnUBt",
+  "tasks": {
+    "metrica_completness_formato_nuevo": {
+      "metrics": {
+        "completitud_nvidia_openai/gpt-oss-20b": {
+          "scores": {
+            "completness_score": {
+              "value": 5.0,
+              "stats": {
+                "count": 1,
+                "sum": 5.0,
+                "sum_squared": null,
+                "min": null,
+                "max": null,
+                "mean": 5.0,
+                "variance": null,
+                "stddev": null,
+                "stderr": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "groups": {},
+  "files_url": null
+}

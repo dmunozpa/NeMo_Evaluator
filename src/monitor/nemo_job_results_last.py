@@ -5,9 +5,8 @@ client = NeMoMicroservices(
     base_url="http://localhost:7331"
 )
 
-# Download job logs - eval-EsnQHQtWV8MPnnKZvzE39Q
-job_id = "eval-Sty1tWUXLc4HbrBawdZiZi"
-
+# Download last job
+job_id = client.evaluation.jobs.list(-1).id
 
 
 # Get job results

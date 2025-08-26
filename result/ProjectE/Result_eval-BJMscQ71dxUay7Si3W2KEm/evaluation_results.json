@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "id": "evaluation_result-UBc1zEXSL65SzhmRNg9hYi",
+  "description": null,
+  "type_prefix": null,
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-26T09:42:11.865812",
+  "updated_at": "2025-08-26T09:42:11.865815",
+  "custom_fields": {},
+  "ownership": null,
+  "job": "eval-BJMscQ71dxUay7Si3W2KEm",
+  "tasks": {
+    "metrica_formato_nuevo": {
+      "metrics": {
+        "completitud_nvidia": {
+          "scores": {
+            "completitud_nvidia_score": {
+              "value": 5.0,
+              "stats": {
+                "count": 1,
+                "sum": 5.0,
+                "sum_squared": null,
+                "min": null,
+                "max": null,
+                "mean": 5.0,
+                "variance": null,
+                "stddev": null,
+                "stderr": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "groups": {},
+  "files_url": null
+}

@@ -10,8 +10,8 @@ def leer_prompt(name):
         return f.read()
 
 
-model_id = "openai/gpt-oss-20b"
-# model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
+model_id_openAi = "openai/gpt-oss-20b"
+model_id_nvidia = "nvidia_llama-3.1-nemotron-nano-8b-v1"
 
 pattern_score = "METRIC_VALUE: (\\d)"
 # METRIC_VALUE:\s*(\d+(?:\.\d+)?)
@@ -26,13 +26,13 @@ job = client.evaluation.jobs.create(
             "metricas_combinadas_3": {
                 "type": "data",
                 "metrics": {
-                    "similaridad": {
+                    "completitud_nvidia": {
                         "type": "llm-judge",
                         "params": {
                             "model": {
                                 "api_endpoint": {
                                     "url": "http://host.docker.internal:1234/v1",
-                                    "model_id": model_id,
+                                    "model_id": model_id_nvidia,
                                 }
                             },
                             "template": {
@@ -40,42 +40,6 @@ job = client.evaluation.jobs.create(
                                     {
                                         "role": "system",
                                         "content": leer_prompt("system"),
-                                        "max_tokens": 100,
-                                        "temperature": 0,
-                                        "top_p": 0.9,
-                                    },
-                                    {
-                                        "role": "user",
-                                        "content": leer_prompt("similarity"),
-                                    },
-                                ]
-                            },
-                            "scores": {
-                                "similaridad_score": {
-                                    "type": "int",
-                                    "parser": {
-                                        "type": "regex",
-                                        "pattern": pattern_score,
-                                    },
-                                }
-                            },
-                        },
-                    },
-                    "completitud": {
-                        "type": "llm-judge",
-                        "params": {
-                            "model": {
-                                "api_endpoint": {
-                                    "url": "http://host.docker.internal:1234/v1",
-                                    "model_id": model_id,
-                                }
-                            },
-                            "template": {
-                                "messages": [
-                                    {
-                                        "role": "system",
-                                        "content": leer_prompt("system"),
-                                        "max_tokens": 100,
                                         "temperature": 0,
                                         "top_p": 0.9,
                                     },
@@ -86,7 +50,7 @@ job = client.evaluation.jobs.create(
                                 ]
                             },
                             "scores": {
-                                "completitud_score": {
+                                "completitud_nvidia_score": {
                                     "type": "int",
                                     "parser": {
                                         "type": "regex",
@@ -96,13 +60,13 @@ job = client.evaluation.jobs.create(
                             },
                         },
                     },
-                    "tono_adecuado": {
+                    "completitud_openIA": {
                         "type": "llm-judge",
                         "params": {
                             "model": {
                                 "api_endpoint": {
                                     "url": "http://host.docker.internal:1234/v1",
-                                    "model_id": model_id,
+                                    "model_id": model_id_openAi,
                                 }
                             },
                             "template": {
@@ -110,18 +74,17 @@ job = client.evaluation.jobs.create(
                                     {
                                         "role": "system",
                                         "content": leer_prompt("system"),
-                                        "max_tokens": 100,
                                         "temperature": 0,
                                         "top_p": 0.9,
                                     },
                                     {
                                         "role": "user",
-                                        "content": leer_prompt("tono_adecuado"),
+                                        "content": leer_prompt("COMPLETNESS"),
                                     },
                                 ]
                             },
                             "scores": {
-                                "tono_resultado": {
+                                "completitud_openAI_score": {
                                     "type": "int",
                                     "parser": {
                                         "type": "regex",

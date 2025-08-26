@@ -1,0 +1,70 @@
+{
+  "metrica_formato_nuevo": [
+    {
+      "item": {
+        "id": "1",
+        "input": "\u00bfHasta que edad me pueden dar una hipoteca Oxigeno?",
+        "prediction": "Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.",
+        "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "completitud_nvidia": {
+          "scores": {
+            "completitud_nvidia_score": {
+              "value": 5.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una respuesta de referencia, La respuesta deber ser una evaluaci\u00f3n entre 1 y 5, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]",
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "El METRIC_NAME es \"Answer Correctness\". \n[OBJETIVO]\nEres un evaluador experto cuya responsabilidad es en que medida una la respuesta proporcionada: Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda. , es correcta respecto a el la respuesta de referencia: Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas.. La m\u00e9trica debe de medir exactitud y fidelidad de la respuesta. No evalues estilo, redacci\u00f3n o cratividad si no afectan a la correcci\u00f3n factual o concpetura.\n[Criterios de Evaluacion]\n5. Totalmente correcto: La respuesta precisa, completa y sin errrores relevantes.\n4. Parcialmente correcto: La respeusta contiene elementos v\u00e1lidos, pero se identifican errores menores.\n3. Correcto: La respuesta es v\u00e1lidada pero presenta impreciones.\n2. Parcialmente incorrecto: La respuesta presenta errores y no se ajusta a respuesta proporcionada.\n1. Incorrecto: La respuesta no debe de considerarse v\u00e1lidada."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-qm38i8exul8ugc6j531p",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 5.0\nMETRIC_NAME: Answer Correctness\nJUSTIFICACION: La respuesta proporcionada es \"Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas.\" Esta respuesta se ajusta exactamente con respecto al texto de referencia proporcionado, cumple con los requisados criterios de exactitud y fidelidad. No hay errores relevantes o puntos incorrectos que afecten la correcci\u00f3n factual o concpetura.\n\n(NOTA: La m\u00e9trica establecida en el problema es \"Answer Correctness\", pero he decidido incluir un punto 5.0 para \"Totalmente correcto\" como una posible categorizaci\u00f3n del valor metrico, lo que est\u00e1 dentro de los l\u00edmites y criterios establecidos.)",
+                  "role": "assistant",
+                  "tool_calls": []
+                }
+              }
+            ],
+            "created": 1756201332,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 198,
+              "prompt_tokens": 389,
+              "total_tokens": 587
+            },
+            "stats": {}
+          }
+        }
+      ]
+    }
+  ]
+}

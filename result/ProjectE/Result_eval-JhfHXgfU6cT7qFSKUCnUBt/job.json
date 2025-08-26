@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "id": "eval-JhfHXgfU6cT7qFSKUCnUBt",
+  "description": null,
+  "type_prefix": "eval",
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-26T10:47:10.836313",
+  "updated_at": "2025-08-26T10:54:14.736662",
+  "custom_fields": {},
+  "ownership": null,
+  "status": "created",
+  "status_details": {
+    "message": null,
+    "task_status": {
+      "metrica_completness_formato_nuevo": "completed"
+    },
+    "progress": 100.0
+  },
+  "config": {
+    "schema_version": "1.0",
+    "id": "eval-config-PxuWNBVikQttBc9nfvczAD",
+    "description": null,
+    "type_prefix": "eval-config",
+    "namespace": "default",
+    "project": "demo_oxigeno",
+    "created_at": "2025-08-26T10:47:10.799320",
+    "updated_at": "2025-08-26T10:47:10.799325",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-config-PxuWNBVikQttBc9nfvczAD",
+    "type": "custom",
+    "params": null,
+    "tasks": {
+      "metrica_completness_formato_nuevo": {
+        "type": "data",
+        "params": null,
+        "metrics": {
+          "completitud_nvidia_openai/gpt-oss-20b": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "openai/gpt-oss-20b"
+                },
+                "id": "model-E9HAUjnWQssuCoNCi3zqPd",
+                "name": "model-E9HAUjnWQssuCoNCi3zqPd"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una respuesta de referencia, La respuesta deber ser una evaluaci\u00f3n entre 1 y 5, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]",
+                    "temperature": 0,
+                    "top_p": 0.9
+                  },
+                  {
+                    "role": "user",
+                    "content": "El METRIC_NAME es \"Answer Correctness\". \n[OBJETIVO]\nEres un evaluador experto cuya responsabilidad es en que medida una la respuesta proporcionada: {{prediction}} , es correcta respecto a el la respuesta de referencia: {{ground_truth}}. La m\u00e9trica debe de medir exactitud y fidelidad de la respuesta. No evalues estilo, redacci\u00f3n o cratividad si no afectan a la correcci\u00f3n factual o concpetura.\n[Criterios de Evaluacion]\n5. Totalmente correcto: La respuesta precisa, completa y sin errrores relevantes.\n4. Parcialmente correcto: La respeusta contiene elementos v\u00e1lidos, pero se identifican errores menores.\n3. Correcto: La respuesta es v\u00e1lidada pero presenta impreciones.\n2. Parcialmente incorrecto: La respuesta presenta errores y no se ajusta a respuesta proporcionada.\n1. Incorrecto: La respuesta no debe de considerarse v\u00e1lidada."
+                  }
+                ]
+              },
+              "scores": {
+                "completness_score": {
+                  "type": "int",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "METRIC_VALUE: (\\d)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dataset": null
+      }
+    },
+    "groups": null
+  },
+  "target": {
+    "schema_version": "1.0",
+    "id": "eval-target-Nbt486iqQm4j32Gxp2sf2w",
+    "description": null,
+    "type_prefix": "eval-target",
+    "namespace": "default",
+    "project": null,
+    "created_at": "2025-08-26T10:47:10.806434",
+    "updated_at": "2025-08-26T10:47:10.806457",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-target-Nbt486iqQm4j32Gxp2sf2w",
+    "type": "rows",
+    "cached_outputs": null,
+    "model": null,
+    "retriever": null,
+    "rag": null,
+    "rows": [
+      {
+        "id": "1",
+        "input": "\u00bfHasta que edad me pueden dar una hipoteca Oxigeno?",
+        "prediction": "Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.",
+        "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas."
+      }
+    ],
+    "dataset": null
+  },
+  "result": "evaluation_result-QwTN3i79azNyiN2396JJsL",
+  "output_files_url": null
+}
