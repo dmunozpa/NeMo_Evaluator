@@ -6,8 +6,10 @@ client = NeMoMicroservices(
 )
 
 # Download last job
-job_id = client.evaluation.jobs.list(-1).id
-
+jobs = client.evaluation.jobs.list()
+job_id = None
+for job in jobs:
+    job_id = job.id
 
 # Get job results
 results = client.evaluation.jobs.results(job_id)

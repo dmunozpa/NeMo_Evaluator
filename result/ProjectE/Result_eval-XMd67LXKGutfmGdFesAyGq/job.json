@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "id": "eval-XMd67LXKGutfmGdFesAyGq",
+  "description": null,
+  "type_prefix": "eval",
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-27T06:48:49.706234",
+  "updated_at": "2025-08-27T06:56:26.293809",
+  "custom_fields": {},
+  "ownership": null,
+  "status": "created",
+  "status_details": {
+    "message": null,
+    "task_status": {
+      "metrica_similarity_formato_nuevo": "completed"
+    },
+    "progress": 100.0
+  },
+  "config": {
+    "schema_version": "1.0",
+    "id": "eval-config-JDBTQBqsYzRSkx8LvNoTuq",
+    "description": null,
+    "type_prefix": "eval-config",
+    "namespace": "default",
+    "project": "demo_oxigeno",
+    "created_at": "2025-08-27T06:48:49.705648",
+    "updated_at": "2025-08-27T06:48:49.705651",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-config-JDBTQBqsYzRSkx8LvNoTuq",
+    "type": "custom",
+    "params": null,
+    "tasks": {
+      "metrica_similarity_formato_nuevo": {
+        "type": "data",
+        "params": null,
+        "metrics": {
+          "similarity_nvidia_llama-3.1-nemotron-nano-8b-v1": {
+            "type": "llm-judge",
+            "params": {
+              "model": {
+                "api_endpoint": {
+                  "url": "http://host.docker.internal:1234/v1",
+                  "model_id": "nvidia_llama-3.1-nemotron-nano-8b-v1"
+                },
+                "id": "model-AVK2MDZubUH8BjaJznkaEQ",
+                "name": "model-AVK2MDZubUH8BjaJznkaEQ"
+              },
+              "template": {
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una respuesta de referencia, La respuesta deber ser una evaluaci\u00f3n entre 1 y 5, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]",
+                    "temperature": 0,
+                    "top_p": 0.9
+                  },
+                  {
+                    "role": "user",
+                    "content": "El METRIC_NAME es \"Similaridad\". \n[OBJETIVO]\nActua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un asistente virtual de una entidad bancaria.\n[DESCRIPCION] \nValorar en que medida una la respuesta es similar en contexto y contenido respecto a el la respuesta de referencia:\nLa m\u00e9trica debe de medir exactitud y fidelidad de la respuesta. No evalues estilo, redacci\u00f3n o cratividad si no afectan a la correcci\u00f3n factual o conceptual.\n\nRespuesta: {{prediction}} \nRespuesta de referencia: {{ground_truth}}\n\n[CRITERIO DE EVALUACI\u00d3N]\nValor entre 1 y 5, siendo 1 poco similar, y 5 exactamente similar y precisa."
+                  }
+                ]
+              },
+              "scores": {
+                "similarity_score": {
+                  "type": "int",
+                  "parser": {
+                    "type": "regex",
+                    "pattern": "METRIC_VALUE: (\\d)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dataset": null
+      }
+    },
+    "groups": null
+  },
+  "target": {
+    "schema_version": "1.0",
+    "id": "eval-target-RaKrBmmkQBqsJGux2SHTJV",
+    "description": null,
+    "type_prefix": "eval-target",
+    "namespace": "default",
+    "project": null,
+    "created_at": "2025-08-27T06:48:49.705744",
+    "updated_at": "2025-08-27T06:48:49.705745",
+    "custom_fields": {},
+    "ownership": null,
+    "name": "eval-target-RaKrBmmkQBqsJGux2SHTJV",
+    "type": "rows",
+    "cached_outputs": null,
+    "model": null,
+    "retriever": null,
+    "rag": null,
+    "rows": [
+      {
+        "id": "1",
+        "input": "\u00bfHasta que edad me pueden dar una hipoteca Oxigeno?",
+        "prediction": "Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.",
+        "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas."
+      },
+      {
+        "id": "2",
+        "input": "\u00bfCual es la edad m\u00e1xima de un ser humano?",
+        "prediction": "130 a\u00f1os",
+        "ground_truth": "122 a\u00f1os y 164 d\u00edas"
+      },
+      {
+        "id": "3",
+        "input": "\u00bfCual es la edad m\u00e1xima de un ser humano?",
+        "prediction": "No dispongo de esa informaci\u00f3n",
+        "ground_truth": "122 a\u00f1os y 164 d\u00edas"
+      }
+    ],
+    "dataset": null
+  },
+  "result": "evaluation_result-HofBXPtn7Voqhytw1ojqa9",
+  "output_files_url": null
+}

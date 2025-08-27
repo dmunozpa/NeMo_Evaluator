@@ -62,7 +62,7 @@ job = client.evaluation.jobs.create(
                                 }
                             },
                         },
-                    },   
+                    },
                 },
             }
         },

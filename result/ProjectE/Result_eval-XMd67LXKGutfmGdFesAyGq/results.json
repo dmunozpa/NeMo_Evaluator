@@ -1,0 +1,202 @@
+{
+  "metrica_similarity_formato_nuevo": [
+    {
+      "item": {
+        "id": "1",
+        "input": "\u00bfHasta que edad me pueden dar una hipoteca Oxigeno?",
+        "prediction": "Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.",
+        "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "similarity_nvidia_llama-3.1-nemotron-nano-8b-v1": {
+          "scores": {
+            "similarity_score": {
+              "value": 4.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una respuesta de referencia, La respuesta deber ser una evaluaci\u00f3n entre 1 y 5, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]",
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "El METRIC_NAME es \"Similaridad\". \n[OBJETIVO]\nActua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un asistente virtual de una entidad bancaria.\n[DESCRIPCION] \nValorar en que medida una la respuesta es similar en contexto y contenido respecto a el la respuesta de referencia:\nLa m\u00e9trica debe de medir exactitud y fidelidad de la respuesta. No evalues estilo, redacci\u00f3n o cratividad si no afectan a la correcci\u00f3n factual o conceptual.\n\nRespuesta: Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda. \nRespuesta de referencia: Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas.\n\n[CRITERIO DE EVALUACI\u00d3N]\nValor entre 1 y 5, siendo 1 poco similar, y 5 exactamente similar y precisa."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-awatsugbfhsnmtlt5gg67",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 4.0\nMETRIC_NAME: Similarity\nJUSTIFICACION: La respuesta proporcionada es muy similar al referendo en varios aspectos clave. Indic\u00f3 la importancia de solicitar la Hipoteca Oxigeno para primera vivienda con el l\u00edmite del plazo y edad del mayor hasta los 75 a\u00f1os, lo que coincide con el contenido del respuesta de referencia. Sin embargo, omiti\u00f3 mencionar las restricciones adicionales para las segundas residencias, espec\u00edficamente que el plazo no puede exceder los 70 a\u00f1os en este tipo de hipoteca. Esta omisi\u00f3n afecta la precisi\u00f3n y fidelidad total de la respuesta. Por consecuencia, le otrecemos un valor metr\u00edtico de 4.0, reconociendo la mayor\u00eda de las caracter\u00edsticas clave de manera similar, aunque no est\u00e1 exactamente como el referencial.",
+                  "role": "assistant",
+                  "tool_calls": []
+                }
+              }
+            ],
+            "created": 1756277330,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 187,
+              "prompt_tokens": 344,
+              "total_tokens": 531
+            },
+            "stats": {}
+          }
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "2",
+        "input": "\u00bfCual es la edad m\u00e1xima de un ser humano?",
+        "prediction": "130 a\u00f1os",
+        "ground_truth": "122 a\u00f1os y 164 d\u00edas"
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "similarity_nvidia_llama-3.1-nemotron-nano-8b-v1": {
+          "scores": {
+            "similarity_score": {
+              "value": 3.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una respuesta de referencia, La respuesta deber ser una evaluaci\u00f3n entre 1 y 5, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]",
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "El METRIC_NAME es \"Similaridad\". \n[OBJETIVO]\nActua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un asistente virtual de una entidad bancaria.\n[DESCRIPCION] \nValorar en que medida una la respuesta es similar en contexto y contenido respecto a el la respuesta de referencia:\nLa m\u00e9trica debe de medir exactitud y fidelidad de la respuesta. No evalues estilo, redacci\u00f3n o cratividad si no afectan a la correcci\u00f3n factual o conceptual.\n\nRespuesta: 130 a\u00f1os \nRespuesta de referencia: 122 a\u00f1os y 164 d\u00edas\n\n[CRITERIO DE EVALUACI\u00d3N]\nValor entre 1 y 5, siendo 1 poco similar, y 5 exactamente similar y precisa."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-f9mdu64rncjliz2ej41lb",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 3.20  \\n METRIC_NAME: Similarity \\n JUSTIFICACION: La respuesta del asistente (130 a\u00f1os) es parcialmente similar a la respuesta de referencia (122 a\u00f1os y 164 d\u00edas), ya que ambos se refieren a un per\u00edodo temporal. Sin embargo, la respuesta del asistante omite los d\u00edas extra mencionados en la respuesta de referencia y el tiempo no est\u00e1 convertido en una forma num\u00e9rica homog\u00e9nea para comparar adecuadamente. La evaluaci\u00f3n considera un rango de 1 (poco similar) a 5 (exactamente similar y precisa). En este caso, la respuesta del asistante es m\u00e1s cercana a la respuesta de referencia que al revesso exactamente similar, por lo tanto recibe una valor de 3.20.\n\nNota: La evaluaci\u00f3n se centra en la precisi\u00f3n y fidelidad factual, no en otros aspectos como el estilo o la redacci\u00f3n.",
+                  "role": "assistant",
+                  "tool_calls": []
+                }
+              }
+            ],
+            "created": 1756277526,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 205,
+              "prompt_tokens": 281,
+              "total_tokens": 486
+            },
+            "stats": {}
+          }
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "3",
+        "input": "\u00bfCual es la edad m\u00e1xima de un ser humano?",
+        "prediction": "No dispongo de esa informaci\u00f3n",
+        "ground_truth": "122 a\u00f1os y 164 d\u00edas"
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "similarity_nvidia_llama-3.1-nemotron-nano-8b-v1": {
+          "scores": {
+            "similarity_score": {
+              "value": 3.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una respuesta de referencia, La respuesta deber ser una evaluaci\u00f3n entre 1 y 5, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]",
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "El METRIC_NAME es \"Similaridad\". \n[OBJETIVO]\nActua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un asistente virtual de una entidad bancaria.\n[DESCRIPCION] \nValorar en que medida una la respuesta es similar en contexto y contenido respecto a el la respuesta de referencia:\nLa m\u00e9trica debe de medir exactitud y fidelidad de la respuesta. No evalues estilo, redacci\u00f3n o cratividad si no afectan a la correcci\u00f3n factual o conceptual.\n\nRespuesta: No dispongo de esa informaci\u00f3n \nRespuesta de referencia: 122 a\u00f1os y 164 d\u00edas\n\n[CRITERIO DE EVALUACI\u00d3N]\nValor entre 1 y 5, siendo 1 poco similar, y 5 exactamente similar y precisa."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-wgmsu87jimm0a5aqaxfp4mr",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 3.2\nMETRIC_NAME: Similarity\nJUSTIFICACION: La respuesta del asistente virtual es \"No dispongo de esa informaci\u00f3n\", que indica la falta de conocimiento o detalle sobre el tema en cuesti\u00f3n. Sin embargo, al abordar el aspecto num\u00e9rico, la respuesta del asistente est\u00e1 similar a la respuesta de referencia en cuanto a la estructura y los valores presentados (\"122 a\u00f1os\" vs \"122 a\u00f1os\" y \"164 d\u00edas\"), aunque se omite un valor en la respuesta del asistante. Esto afecta su precisi\u00f3n, reduciendo su precisi\u00f3n general. La justificaci\u00f3n principal es la similaridad en el contenido num\u00e9rico con excepci\u00f3n de la omission del valor de los d\u00edas.\n\n(NOTA: He optado por no utilizar acentos como se solicit\u00f3 \"sin acentos\" en el formato especificado.)",
+                  "role": "assistant",
+                  "tool_calls": []
+                }
+              }
+            ],
+            "created": 1756277656,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 189,
+              "prompt_tokens": 284,
+              "total_tokens": 473
+            },
+            "stats": {}
+          }
+        }
+      ]
+    }
+  ]
+}

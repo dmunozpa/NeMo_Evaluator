@@ -1,8 +1,8 @@
 from huggingface_hub import HfApi, upload_file
 import os
- 
+
 # Configure microservice host URLs # MODIFY TO OS
-DATA_STORE_BASE_URL = "http://localhost:8000"
+DATA_STORE_BASE_URL = "http://data-store:3000"
 #DATA_STORE_BASE_URL = "http://host.docker.internal:3000"
 #DATA_STORE_BASE_URL = "http://data-store:3000"
 
@@ -12,7 +12,8 @@ NAMESPACE = "default" # Namespace that you create using NeMo Entity Store
 DATASET_NAME = "test-dataset"
 
 # Provide HF token ## MODIFY TO OS
-HF_TOKEN = "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"
+#HF_TOKEN = "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"
+HF_TOKEN = "mock"
 
 try:
    # Initialize Hugging Face API client

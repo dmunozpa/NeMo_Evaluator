@@ -29,15 +29,18 @@ job = client.evaluation.jobs.create(
             "qa": {
                 "type": "chat-completion",
                 "params": {
+                    "model": {
+                        "api_endpoint": {
+                            "url": "http://host.docker.internal:1234/v1",
+                            "model_id": model_id,
+                        }
+                    },
                     "template": {
                         "messages": [
                             {"role": "user", "content": "{{input}}"},
                             {"role": "assistant", "content": "{{prediction}}"},
-                        ],
-                        "max_tokens": 200,
-                        "temperature": 0.7,
-                        "top_p": 0.9,
-                    }
+                        ]
+                    },
                 },
             },
             "metrics": {
@@ -61,27 +64,9 @@ job = client.evaluation.jobs.create(
         },
     },
     target={
-        "type": "rows",
-        "rows": [
-            {
-                "id": "1",
-                "input": "¿Hasta que edad me pueden dar una hipoteca Oxigeno?",
-                "prediction": "Para primera vivienda, hasta los 75 años y hasta los 70 años segunda vivienda.",
-                "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 años en el caso de las primeras residencias o los 70 años en las segundas.",
-            },
-            {
-                "id": "2",
-                "input": "¿Cual es la edad máxima de un ser humano?",
-                "prediction": "130 años",
-                "ground_truth": "122 años y 164 días",
-            },
-            {
-                "id": "3",
-                "input": "¿Cual es la edad máxima de un ser humano?",
-                "prediction": "No dispongo de esa información",
-                "ground_truth": "122 años y 164 días",
-            },
-        ],
+        "dataset": {
+            "files_url": "file://C:/Projects/NeMo_Evaluator/src/demo/training_data.json"
+        }
     },
 )
 
