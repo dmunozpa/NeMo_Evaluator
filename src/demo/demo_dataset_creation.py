@@ -2,7 +2,7 @@ from huggingface_hub import HfApi, upload_file
 import os
 
 # Configure microservice host URLs # MODIFY TO OS
-DATA_STORE_BASE_URL = "http://data-store:3000"
+DATA_STORE_BASE_URL = "http://localhost:3000"
 #DATA_STORE_BASE_URL = "http://host.docker.internal:3000"
 #DATA_STORE_BASE_URL = "http://data-store:3000"
 

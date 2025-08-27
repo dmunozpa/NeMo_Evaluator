@@ -1,0 +1,202 @@
+{
+  "metrica_hallucination_rate_formato_nuevo": [
+    {
+      "item": {
+        "id": "1",
+        "input": "\u00bfHasta que edad me pueden dar una hipoteca Oxigeno?",
+        "prediction": "Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda.",
+        "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas."
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "hallucination_rate_nvidia_llama-3.1-nemotron-nano-8b-v1": {
+          "scores": {
+            "hallucination_rate_score": {
+              "value": 3.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una respuesta de referencia, La respuesta deber ser una evaluaci\u00f3n entre 1 y 5, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]",
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "El METRIC_NAME es \"Ratio de Alucinaci\u00f3n\". \n[OBJETIVO]\nActua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un asistente virtual de una entidad bancaria.\n[DESCRIPCION] \nValorar en que medida una la respuesta es una alucinaci\u00f3n del modelo, basandote en contexto y contenido respecto a el la respuesta de referencia:\nLa m\u00e9trica debe de medir exactitud y fidelidad en base la respuesta de referencia. No evalues estilo, redacci\u00f3n o cratividad si no afectan a la correcci\u00f3n factual o conceptual.\n\nRespuesta: Para primera vivienda, hasta los 75 a\u00f1os y hasta los 70 a\u00f1os segunda vivienda. \nRespuesta de referencia: Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 a\u00f1os en el caso de las primeras residencias o los 70 a\u00f1os en las segundas.\n\n[CRITERIO DE EVALUACI\u00d3N]\nValor entre 1 y 5, siendo 1 respuesta muy real y concisa, y 5 un contexto muy diferente al propuesto."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-rvkwlcxq0kqza0abbop6r",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 3\nMETRIC_NAME: Ratio de Alucinaci\u00f3n\nJUST pero aplico en el contexto del problema, es necesario que se evaluar en la precisi\u00f3n y en la fidelidad con el uso del modelo asio se ajuste a la respuesta para mejorar seg\u00fan los principio de mediar algo similar.\nJUSTO MEJOR:\nQUE SE VALA DEL DE AC de de su efecto.\n\nJUSTO\nJUSTo objetivo, hayos dentro del METRIC_NAME. En este caso, el METRIC_NAME es \"Ratio de Alucinaci\u00f3n\" pero con un valor aproximamente m\u00e1s cercano a 1 que 5. La ratio se ajusta pero no se logra ajustar para la precisi\u00f3n.\n\nJUSTIFICACION: Se refleja la evaluaci\u00f3n en base a su precisi\u00f3n y fidelidad de de acuerdo dela modelo,esto es una forma de reducir el espacio dentro del objetivo de ajuste.\n\nMETRIC_NAME\nEsper bimboo de la opci\u00f3n. Desde un grupo,como ejemplo\n\nMETRIC_NAME: Ratio de Alucinacion (1 para 5)\nJUSTO MEJOR: a trav\u00e9s de la opci\u00f3n, el Modelo se logra una respuesta aprochada o mejor.\nEste METRIC_NAME es utilizado para evaluar la precisi\u00f3n y la fidelidad en el modelo con el objetivo de de ajuste. Este METRIC_NAME solo se ha aplicado si la opci\u00f3n se ajusta es mejor en la respuesta.\n\nMETRIC_VALUE: 5\nJUSTAS DE ESTO\nUna evaluaci\u00f3n en el contexto del Modelo dentro (opci\u00f3n) pero con un valor que, es mejor de en la opci\u00f3n cuando el objetivo es la plazo yel otro. La ratio fue que mejora la opci\u00f3n, pero no se logra ajustar cuando el objetivo no es el primer o segundo.\n\nJUSTIFICACION: Porque,alrededor de\nSi el objetivo es el primer vivienda (hasta 75 a\u00f1os), el METRIC_VALUE es m\u00e1s cercano a la opci\u00f3n. Si el objetivo es la segunda vida, el METRIC_VALUE es igual al primero.\n\nMETRIC_VALUE: 5 (si el objetivo es el plazo)\nMormente, cuando se logra ajustar con el METRIC_VALUE de 5 para el contexto del Modelo.\n\nPor lo que parece con estos valores dentro del contexto de ajuste en el objetivo, la la opci\u00f3n dentro de la opci\u00f3n y un opci\u00f3n con el modelo.\nEste tipo de evaluaci\u00f3n se refiere al uso del modelo,como cuando el modelo est\u00e1 siendo ajustado solo para la opci\u00f3n. En este caso, ambos (METRIC_VALUE 5) es mejor que el METRIC_VALUE 1. \n\nPara reflexionar con esta herramienta de ajuste, en el contexto del modelo.\n\nFINAL de respuesta dentro es mejor la opci\u00f3n, y cuando el objetivo es el primer vivienda o el plazo.\n\nPor lo que si el objetivo es el plazo,se logra la evaluaci\u00f3n dentro de la opci\u00f3n con el METRIC_VALUE 5. Si el objetivo es la segunda vida, se ajusta hacia el METRIC_VALUE1.",
+                  "role": "assistant",
+                  "tool_calls": []
+                }
+              }
+            ],
+            "created": 1756284380,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 644,
+              "prompt_tokens": 367,
+              "total_tokens": 1011
+            },
+            "stats": {}
+          }
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "2",
+        "input": "\u00bfCual es la edad m\u00e1xima de un ser humano?",
+        "prediction": "130 a\u00f1os",
+        "ground_truth": "122 a\u00f1os y 164 d\u00edas"
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "hallucination_rate_nvidia_llama-3.1-nemotron-nano-8b-v1": {
+          "scores": {
+            "hallucination_rate_score": {
+              "value": 4.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una respuesta de referencia, La respuesta deber ser una evaluaci\u00f3n entre 1 y 5, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]",
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "El METRIC_NAME es \"Ratio de Alucinaci\u00f3n\". \n[OBJETIVO]\nActua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un asistente virtual de una entidad bancaria.\n[DESCRIPCION] \nValorar en que medida una la respuesta es una alucinaci\u00f3n del modelo, basandote en contexto y contenido respecto a el la respuesta de referencia:\nLa m\u00e9trica debe de medir exactitud y fidelidad en base la respuesta de referencia. No evalues estilo, redacci\u00f3n o cratividad si no afectan a la correcci\u00f3n factual o conceptual.\n\nRespuesta: 130 a\u00f1os \nRespuesta de referencia: 122 a\u00f1os y 164 d\u00edas\n\n[CRITERIO DE EVALUACI\u00d3N]\nValor entre 1 y 5, siendo 1 respuesta muy real y concisa, y 5 un contexto muy diferente al propuesto."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-1h2i992ghglz705k3qumld",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_VALUE: 4\nMETRIC_NAME: Ratio de Alucination (Ratio)\nJUST and the reference response is from year 130 to year 122 in terms of age, which results. The ratio of a\nJUST for for this evaluation is correct and as per the model's response.\n\nJUSTIFICACI\u00d3N:\nJ,el modelo garantiza una evaluaci\u00f3n correcta con un porcentaje de alucinaci\u00f3n cercano a los 130 (year) respecto a de la respuesta de fecha correcta en el contexto. La evaluaci\u00f3n es considerada exacta si el modelo est\u00e1 dentro del l\u00edmite estable para la evaluaci\u00f3n.\n\n(JUST: La evaluaci\u00f3n se basa de onte, un momento dentro,distinguido del l\u00edmite objetivo inicialmente definido (como 130 a\u00f1os). Si el momento dentro es diferente al l\u00edmite objetivo inicialmente definido y lo es, entonces el modelo no est\u00e1 dentro del l\u00edmite. Pero en este caso la evaluaci\u00f3n es considerada correcta. La evaluaci\u00f3n es correcta si el momento es cerca del l\u00edmite objetivo, pero puede tener una peque\u00f1a desvi seg\u00fan la distancia al l\u00edmite objetivo.\n\n(Justificaci\u00f3n: El evaluaci\u00f3n es considerada exacta para un modelo que est\u00e1 dentro del l\u00edmite de 130 a\u00f1os. Si el modelo est\u00e1 fuera de este l\u00edmite, la evaluaci\u00f3n ser\u00eda incorrecta.)\n\nMETRIC_VALUE: 4\nMETRIC_NAME: Ratio\nJUSTo de la respuesta es 122 ( de referencia a lo que se refiere ao al modelo est\u00e1 dentro del l\u00edmite objetivo inicialmente definido. La evaluaci\u00f3n es correcta para la ratio de alucinaci\u00f3n si el modelo est\u00e1 dentro del l\u00edmite.\n\n(Nota en c\u00f3digo para entender mejor: unas puede haber un tipo de respuesta que requiera una evaluaci\u00f3n m\u00e1s detallada y el tipo que se ha entrado en este problema, pero como no estoy solo mencionando que mi prop\u00f3sito era generar esta METRIC_VALUE es correcto si el modelo est\u00e1 dentro del l\u00edmite objetivo inicialmente definido. La evaluaci\u00f3n ser\u00eda correcta para la respuesta de de 122 a\u00f1os.\n",
+                  "role": "assistant",
+                  "tool_calls": []
+                }
+              }
+            ],
+            "created": 1756285374,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 439,
+              "prompt_tokens": 304,
+              "total_tokens": 743
+            },
+            "stats": {}
+          }
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "3",
+        "input": "\u00bfCual es la edad m\u00e1xima de un ser humano?",
+        "prediction": "No dispongo de esa informaci\u00f3n",
+        "ground_truth": "122 a\u00f1os y 164 d\u00edas"
+      },
+      "sample": {
+        "output_text": null,
+        "response": {}
+      },
+      "metrics": {
+        "hallucination_rate_nvidia_llama-3.1-nemotron-nano-8b-v1": {
+          "scores": {
+            "hallucination_rate_score": {
+              "value": 0.0,
+              "stats": null
+            }
+          }
+        }
+      },
+      "requests": [
+        {
+          "request": {
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un evaluador experto (LLM-as-a-Judge). Tu tarea es recibir una pregunta y una respuesta de referencia, La respuesta deber ser una evaluaci\u00f3n entre 1 y 5, en base a la metrica definida. Responde en Espa\u00f1ol, con charset UTF-8 sin acentos, y con el siguiente formato: METRIC_VALUE: X.X  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]",
+                "temperature": 0,
+                "top_p": 0.9
+              },
+              {
+                "role": "user",
+                "content": "El METRIC_NAME es \"Ratio de Alucinaci\u00f3n\". \n[OBJETIVO]\nActua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un asistente virtual de una entidad bancaria.\n[DESCRIPCION] \nValorar en que medida una la respuesta es una alucinaci\u00f3n del modelo, basandote en contexto y contenido respecto a el la respuesta de referencia:\nLa m\u00e9trica debe de medir exactitud y fidelidad en base la respuesta de referencia. No evalues estilo, redacci\u00f3n o cratividad si no afectan a la correcci\u00f3n factual o conceptual.\n\nRespuesta: No dispongo de esa informaci\u00f3n \nRespuesta de referencia: 122 a\u00f1os y 164 d\u00edas\n\n[CRITERIO DE EVALUACI\u00d3N]\nValor entre 1 y 5, siendo 1 respuesta muy real y concisa, y 5 un contexto muy diferente al propuesto."
+              }
+            ]
+          },
+          "response": {
+            "id": "chatcmpl-c8u13z57nrjs473u9xlboh",
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "logprobs": null,
+                "message": {
+                  "content": "METRIC_NAME: Ratio of Curvature (ROC)\nMETRIC_VALUE: 3.01\nJUST seg\u00fan la evaluaci\u00f3n realiz para el evento que se refiere a en tu de esta respuesta, puede generar una curvatura o uni\u00f3n dentro de una \u00bfEstimulaci\u00f3n de contexto. No es posible evaluar una valor entre 1 y 5 basado en la informaci\u00f3n disponible.\n\nJUSTUARIO DE B en el contexto de este problema,es necesario proporcionar m\u00e1s detalles sobre la evaluaci\u00f3n.Si no tengo acceso a esta informaci\u00f3n, me dir\u00eda que no puedo ofrecer un valor adecuado. \n\nJUSTO:O\nMe (si hubo del modelo) no se puede evaluar en t\u00e9re de manera directa.Pero si conocemos el contexto y la respuesta, podr\u00eda generar un valor entre 1 y 5 basada en la cantidad de veces que el modelo ha utilizado este tipo de curvatures.\n\nMETRIC_NAME: \nRatio of Curvature (ROC) - La m\u00e9trica m\u00eda de curvatures con encargado o dentro.\nJUSTO. \n\nNO SINOS PARE obo inmediatamente en esta pregunta no tengo la informaci\u00f3n para evaluar el ROC, pero si conocemos el contexto y respuesta, podr\u00eda generar un valor entre 1 y 5 basado en la cantidad de veces que el modelo ha utilizado este tipo de curvatures.\n\nJUSTIFICACI\u00d3N: La no se puede justificar porque falta informaci\u00f3n. \n\nSi necesitan un contexto espec\u00edfico para evaluar la m\u00e9trica de con m\u00e1s detalles. \nPor ejemplo, si el contexto se refiere a la cantidad de veces el modelo ha usado el contexto dentro del curso de del modelo, podr\u00eda generar un valor entre 1 y 5 basado en esta.\n\nEsper agen\u00famen que te para la evaluaci\u00f3n pueda dar una valor adecuado cuando tenga acceso a los respuesta espec\u00edfica. Sin embargo, con la informaci\u00f3n proporcionada no puedo ofrecer un valor adecuado a menos de de manera directa.\n\nPor favor, si puedes proporcionar mas detalles sobre el contexto o la respuesta, podremos obtener un valor m\u00e1s aproximo para este problema.",
+                  "role": "assistant",
+                  "tool_calls": []
+                }
+              }
+            ],
+            "created": 1756285634,
+            "model": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "object": "chat.completion",
+            "system_fingerprint": "nvidia_llama-3.1-nemotron-nano-8b-v1",
+            "usage": {
+              "completion_tokens": 449,
+              "prompt_tokens": 307,
+              "total_tokens": 756
+            },
+            "stats": {}
+          }
+        }
+      ]
+    }
+  ]
+}

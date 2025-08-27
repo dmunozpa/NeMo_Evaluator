@@ -10,8 +10,8 @@ def leer_prompt(name):
         return f.read()
 
 
-# model_id = "openai/gpt-oss-20b"
-model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
+model_id = "openai/gpt-oss-20b"
+#model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
 
 metrica = "hallucination_rate"
 

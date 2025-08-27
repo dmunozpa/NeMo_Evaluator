@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "id": "evaluation_result-TeMMK9s4ya4Dt9mLQwpiFn",
+  "description": null,
+  "type_prefix": null,
+  "namespace": "default",
+  "project": null,
+  "created_at": "2025-08-27T08:26:19.200538",
+  "updated_at": "2025-08-27T08:26:19.200541",
+  "custom_fields": {},
+  "ownership": null,
+  "job": "eval-PriMx2BxLWq8b2tJ37iemu",
+  "tasks": {
+    "metrica_hallucination_rate_formato_nuevo": {
+      "metrics": {
+        "hallucination_rate_nvidia_llama-3.1-nemotron-nano-8b-v1": {
+          "scores": {
+            "hallucination_rate_score": {
+              "value": 2.3333333333333335,
+              "stats": {
+                "count": 3,
+                "sum": 7.0,
+                "sum_squared": null,
+                "min": null,
+                "max": null,
+                "mean": 2.3333333333333335,
+                "variance": null,
+                "stddev": null,
+                "stderr": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "groups": {},
+  "files_url": null
+}

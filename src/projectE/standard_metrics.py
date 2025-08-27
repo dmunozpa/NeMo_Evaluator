@@ -67,7 +67,7 @@ job = client.evaluation.jobs.create(
         "dataset": {
             "files_url": "file://C:/Projects/NeMo_Evaluator/src/demo/training_data.json"
         }
-    },
+    }
 )
 
 # Get the job ID and status
