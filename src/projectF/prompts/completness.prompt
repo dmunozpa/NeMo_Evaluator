@@ -1,0 +1,9 @@
+El METRIC_NAME es "Answer Correctness". 
+[OBJETIVO]
+Eres un evaluador experto cuya responsabilidad es en que medida una la respuesta proporcionada: {{prediction}} , es correcta respecto a el la respuesta de referencia: {{ground_truth}}. La métrica debe de medir exactitud y fidelidad de la respuesta. No evalues estilo, redacción o cratividad si no afectan a la corrección factual o concpetura.
+[Criterios de Evaluacion]
+5. Totalmente correcto: La respuesta precisa, completa y sin errrores relevantes.
+4. Parcialmente correcto: La respeusta contiene elementos válidos, pero se identifican errores menores.
+3. Correcto: La respuesta es válidada pero presenta impreciones.
+2. Parcialmente incorrecto: La respuesta presenta errores y no se ajusta a respuesta proporcionada.
+1. Incorrecto: La respuesta no debe de considerarse válidada.

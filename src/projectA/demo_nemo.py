@@ -27,7 +27,7 @@ response = client.evaluation.live(
             "check-refusal": {
                 "type": "data",
                 "metrics": {
-                   "UNICAJA-METRIC": {
+                   "METRIC": {
                         "type": "llm-judge",
                         "params": {
                             "model": {

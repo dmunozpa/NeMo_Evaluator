@@ -4,6 +4,8 @@ from nemo_microservices import NeMoMicroservices
 # Initialize the client
 client = NeMoMicroservices(base_url="http://localhost:7331")
 
+# @TODO Eliminar el API Key
+os.environ['NVIDIA_API_KEY'] = "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"
 
 def leer_prompt(name):
     with open(f"./prompts/{name}.prompt", encoding="utf-8") as f:
@@ -11,7 +13,12 @@ def leer_prompt(name):
 
 
 #model_id = "openai/gpt-oss-20b"
-model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
+#model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
+#base_url = "http://host.docker.internal:1234/v1"
+
+
+model_id = "meta/llama-3.3-70b-instruct"
+base_url = "https://integrate.api.nvidia.com/v1"
 
 metrica = "hallucination_rate"
 
@@ -20,7 +27,7 @@ pattern_score = "METRIC_VALUE: (\\d)"
 # METRIC_VALUE:\s*(\d+(?:\.\d+)
 
 # Run a combined metrics live evaluation
-job = client.evaluation.jobs.create(
+response = client.evaluation.live(
     config={
         "project": "demo_oxigeno",
         "type": "custom",
@@ -34,8 +41,10 @@ job = client.evaluation.jobs.create(
                         "params": {
                             "model": {
                                 "api_endpoint": {
-                                    "url": "http://host.docker.internal:1234/v1",
+                                    "url": base_url,
                                     "model_id": model_id,
+                                    "api_key": "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"
+                                
                                 }
                             },
                             "template": {
@@ -81,8 +90,13 @@ job = client.evaluation.jobs.create(
 )
 
 # Get the job ID and status
-job_id = job.id
-print(f"Job ID: {job_id}")
-print(f"Job status: {job.status}")
-print(f"Created at: {job.created_at}")
-print(f"Updated at: {job.updated_at}")
+print(f"Status: {response.status}")
+print(f"Results: {response.result}")
+
+
+
+# Download evaluation results
+#results_zip = client.evaluation.jobs.download_results(response.result.job)
+
+# Save to file
+#results_zip.write_to_file(f'./result/Result_1.zip')

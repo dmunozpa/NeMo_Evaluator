@@ -1,4 +1,4 @@
-"Unicaja-Claridad": {
+"Claridad": {
                         "type": "llm-judge",
                         "params": {
                             "model": {

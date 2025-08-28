@@ -1,0 +1,12 @@
+El METRIC_NAME es "Similaridad". 
+[OBJETIVO]
+Actua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un asistente virtual de una entidad bancaria.
+[DESCRIPCION] 
+Valorar en que medida una la respuesta es similar en contexto y contenido respecto a el la respuesta de referencia:
+La métrica debe de medir exactitud y fidelidad de la respuesta. No evalues estilo, redacción o cratividad si no afectan a la corrección factual o conceptual.
+
+Respuesta: {{prediction}} 
+Respuesta de referencia: {{ground_truth}}
+
+[CRITERIO DE EVALUACIÓN]
+Valor entre 1 y 5, siendo 1 poco similar, y 5 exactamente similar y precisa.
