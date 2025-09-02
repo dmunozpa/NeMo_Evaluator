@@ -1,13 +1,18 @@
 import os
+import httpx
 from nemo_microservices import NeMoMicroservices
 
 # Initialize the client
 client = NeMoMicroservices(base_url="http://localhost:7331")
 
 
+httpx.Timeout(900.0)
+
 def leer_prompt(name):
     with open(f"./prompts/{name}.prompt", encoding="utf-8") as f:
         return f.read()
+
+
 
 
 #model_id = "openai/gpt-oss-20b"
@@ -29,6 +34,10 @@ response = client.evaluation.live(
     config={
         "project": "demo_oxigeno",
         "type": "custom",
+        "params": {
+            "request_timeout": 999,
+            "parallelism": 2
+            },
         "tasks": {
             f"metrica_{metrica}_formato_nuevo": {
                 "type": "data",

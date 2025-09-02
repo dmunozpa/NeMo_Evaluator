@@ -8,8 +8,11 @@ client = OpenAI(
 
 message = "Ping"
 
+#model_id = "meta/llama-3.3-70b-instruct"
+model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
+
 completion = client.chat.completions.create(
-  model="meta/llama-3.3-70b-instruct",
+  model=model_id,
   messages=[{"role":"user","content":f"{message}"}],
   temperature=0.2,
   top_p=0.7,
