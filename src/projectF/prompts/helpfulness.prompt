@@ -1,0 +1,25 @@
+El METRIC_NAME es "Helpfulness"
+Como sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la utilidad de la respuesta del sistema IA considerando:
+- ¿La respuesta aborda completamente la consulta del cliente?
+- ¿Proporciona información relevante y aplicable al contexto bancario?
+- ¿Incluye pasos concretos o recomendaciones cuando es apropiado?
+- ¿Anticipa necesidades adicionales del cliente relacionadas con su consulta?
+
+Escala de evaluación:
+- 5: Respuesta completa, relevante y con valor añadido excepcional
+- 4: Respuesta muy buena que supera las expectativas
+- 3: Respuesta adecuada que cumple las expectativas
+- 2: Respuesta parcial o con información limitada
+- 1: Respuesta irrelevante o que no ayuda
+
+Justifica tu puntuación con ejemplos específicos de la respuesta.
+
+Texto para analizar:
+{{Consulta}}
+Respuesta: 
+{{Respuesta}} 
+
+Muestra el siguiente formato de salida, sin nada adicional:
+METRIC_VALUE: [Escala de evaluación]
+METRIC_NAME: [METRIC_NAME] 
+JUSTIFICACION: [Detalle justificacion]

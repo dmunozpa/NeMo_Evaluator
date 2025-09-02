@@ -1,0 +1,130 @@
+{
+    "metrica_combiandas_formato_nuevo": [
+        {
+            "item": {
+                "id": "1",
+                "Consulta": "¿Hasta que edad me pueden dar una hipoteca Oxigeno?",
+                "Respuesta": "Viva el Real Madrid",
+                "ground_truth": "Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 años en el caso de las primeras residencias o los 70 años en las segundas."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "hallucination_rate_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "hallucination_rate_score": {
+                            "value": 1.0,
+                            "stats": null
+                        }
+                    }
+                },
+                "claridad_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "claridad_score": {
+                            "value": 1.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Ratio de Alucinación\". \n[OBJETIVO]\nActua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un asistente virtual de una entidad bancaria.\n[DESCRIPCION] \nValorar en que medida una la respuesta es una alucinación del modelo, basandote en contexto y contenido respecto a el la respuesta de referencia:\nLa métrica debe de medir exactitud y fidelidad en base la respuesta de referencia. No evalues estilo, redacción o cratividad si no afectan a la corrección factual o conceptual.\n\nRespuesta: Viva el Real Madrid \nRespuesta de referencia: Puedes solicitar la Hipoteca Oxigeno siempre que la del plazo de esta y edad del mayor de los titulares no supere los 75 años en el caso de las primeras residencias o los 70 años en las segundas.\n\n[CRITERIO DE EVALUACIÓN]\nValor entre 1 y 5, siendo 1 respuesta muy diferente al contexto, y 5 un similar y fiel a contexto."
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "023264a911344dfc839d52a30a4e400c",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 1  \nMETRIC_NAME: Ratio de Alucinación  \nJUSTIFICACION: La respuesta \"Viva el Real Madrid\" es completamente ajena al contexto bancario y la referencia proporcionada, que trata sobre condiciones de una hipoteca. No existe relación factual, temática ni conceptual alguna, indicando una alucinación total del modelo.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756816630,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 78,
+                            "prompt_tokens": 294,
+                            "total_tokens": 372,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                },
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Claridad\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la claridad de la comunicación considerando:\n- Simplicidad del lenguaje sin sacrificar precisión técnica\n- Ausencia de ambigüedades en conceptos bancarios\n- Explicaciones comprensibles para el perfil del cliente, tanto personas adultas, como personas mayores de 65 años o con alguna minusvalía.\n- Estructura de información clara (general a específico)\n- Uso apropiado de ejemplos cuando sea necesario\n\nAspectos específicos:\n- ¿Los términos financieros están explicados adecuadamente?\n- ¿La información está organizada de forma comprensible?\n- ¿Evita jerga innecesaria manteniendo precisión?\n- ¿Las instrucciones o recomendaciones son específicas y claras?\n\nUtiliza la siguiente escala de puntuación y justifica tu puntuación con ejemplos específicos del texto:\n\n- Excepcional (5): Comunicación cristalina, perfectamente comprensible\n- Excelente (4): Muy clara con mínimas ambigüedades\n- Buena (3): Clara y comprensible en general\n- Regular (2): Algunas confusiones o falta de claridad\n- Insuficiente (1): Confusa, ambigua o incomprensible\n\n\nTexto para analizar:\n¿Hasta que edad me pueden dar una hipoteca Oxigeno?\nRespuesta: \nViva el Real Madrid \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "ca950c699ab4461188dd088b0a13649e",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 1  \nMETRIC_NAME: Claridad  \nJUSTIFICACION: La respuesta no tiene relacion con la pregunta del usuario sobre hipotecas, es completamente incomprensible en el contexto bancario. No explica terminos financieros, carece de estructura organizada, usa lenguaje inapropiado y no proporciona instrucciones o ejemplos relevantes. La respuesta es confusa y ambigua, incumpliendo todos los criterios de claridad establecidos.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756816632,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 103,
+                            "prompt_tokens": 441,
+                            "total_tokens": 544,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

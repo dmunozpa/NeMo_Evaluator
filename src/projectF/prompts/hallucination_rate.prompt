@@ -5,8 +5,8 @@ Actua como LLM evaluador experto cuya responsabilidad es evaluar respuesta de un
 Valorar en que medida una la respuesta es una alucinación del modelo, basandote en contexto y contenido respecto a el la respuesta de referencia:
 La métrica debe de medir exactitud y fidelidad en base la respuesta de referencia. No evalues estilo, redacción o cratividad si no afectan a la corrección factual o conceptual.
 
-Respuesta: {{prediction}} 
+Respuesta: {{Respuesta}} 
 Respuesta de referencia: {{ground_truth}}
 
 [CRITERIO DE EVALUACIÓN]
-Valor entre 1 y 5, siendo 1 respuesta muy real y concisa, y 5 un contexto muy diferente al propuesto.
+Valor entre 1 y 5, siendo 1 respuesta muy diferente al contexto, y 5 un similar y fiel a contexto.

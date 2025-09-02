@@ -1,0 +1,30 @@
+El METRIC_NAME es "Claridad"
+Como sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la claridad de la comunicación considerando:
+- Simplicidad del lenguaje sin sacrificar precisión técnica
+- Ausencia de ambigüedades en conceptos bancarios
+- Explicaciones comprensibles para el perfil del cliente, tanto personas adultas, como personas mayores de 65 años o con alguna minusvalía.
+- Estructura de información clara (general a específico)
+- Uso apropiado de ejemplos cuando sea necesario
+
+Aspectos específicos:
+- ¿Los términos financieros están explicados adecuadamente?
+- ¿La información está organizada de forma comprensible?
+- ¿Evita jerga innecesaria manteniendo precisión?
+- ¿Las instrucciones o recomendaciones son específicas y claras?
+
+Utiliza la siguiente escala de puntuación y justifica tu puntuación con ejemplos específicos del texto:
+
+- Excepcional (5): Comunicación cristalina, perfectamente comprensible
+- Excelente (4): Muy clara con mínimas ambigüedades
+- Buena (3): Clara y comprensible en general
+- Regular (2): Algunas confusiones o falta de claridad
+- Insuficiente (1): Confusa, ambigua o incomprensible
+
+
+Texto para analizar:
+{{Consulta}}
+Respuesta: 
+{{Respuesta}} 
+
+A continuación, proporciona tu evaluación con el siguiente formato: 
+METRIC_VALUE: [Escala de evaluación]  \n METRIC_NAME: [NAME] \n JUSTIFICACION: [Detalle justificacion]

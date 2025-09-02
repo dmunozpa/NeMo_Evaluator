@@ -1,0 +1,37 @@
+{
+  "job": "eval-Sf9xBUucMwhknPoi7dSqU2",
+  "id": "evaluation_result-CNEvCdsn2To9vAZwVW3xD9",
+  "created_at": "2025-09-02T12:32:30.346158",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_metrics": {
+      "metrics": {
+        "Sentimiento_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "Sentimiento_score": {
+              "value": 2.3333333333333335,
+              "stats": {
+                "count": 3,
+                "max": null,
+                "mean": 2.3333333333333335,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 7.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-02T12:32:30.346161"
+}

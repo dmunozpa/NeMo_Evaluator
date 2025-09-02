@@ -1,0 +1,30 @@
+El METRIC_NAME es "Tonalidad"
+
+Como sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la consistencia de tono y estilo considerando:
+- Mantenimiento del registro profesional bancario apropiado
+- Consistencia en el nivel de formalidad a lo largo del texto
+- Adaptación adecuada al perfil del cliente (particular/empresa)
+- Equilibrio entre profesionalidad y accesibilidad
+- Coherencia en el uso de terminología específica
+
+Aspectos específicos del sector bancario:
+- ¿El tono transmite confianza y profesionalidad?
+- ¿Es apropiado para el contexto de servicios financieros?
+- ¿Se mantiene consistente en toda la respuesta?
+- ¿Refleja los valores de la entidad bancaria?
+
+Utiliza la siguiente escala de puntuación e identifica ejemplos de consistencia o inconsistencias en el mensaje:
+
+- Excepcional (5): Tono perfectamente consistente y apropiado.
+- Excelente (4): Muy buena consistencia con variaciones mínimas.
+- Buena (3): Tono generalmente consistente y apropiado.
+- Regular (2): Algunas inconsistencias de tono o estilo.
+- Insuficiente (1): Tono inconsistente o inapropiado para el contexto.
+
+Texto para analizar:
+{{Consulta}}
+Respuesta: 
+{{Respuesta}} 
+
+A continuación, proporciona tu evaluación con el siguiente formato: 
+METRIC_VALUE: [Escala de evaluación]  \n METRIC_NAME: [NAME] \n JUSTIFICACION: [Detalle justificacion]

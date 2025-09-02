@@ -1,0 +1,37 @@
+{
+  "job": "eval-9Bcx8dhVMuM1UV4yWYrpWC",
+  "id": "evaluation_result-5i5yAc67N4PdmnxiSofuQ2",
+  "created_at": "2025-09-02T11:59:48.421047",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_metrics": {
+      "metrics": {
+        "coherencia_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "coherencia_score": {
+              "value": 2.6666666666666665,
+              "stats": {
+                "count": 3,
+                "max": null,
+                "mean": 2.6666666666666665,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 8.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-02T11:59:48.421049"
+}

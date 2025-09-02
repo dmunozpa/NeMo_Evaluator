@@ -8,8 +8,8 @@ client = OpenAI(
 
 message = "Ping"
 
-#model_id = "meta/llama-3.3-70b-instruct"
-model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
+model_id = "meta/llama-3.3-70b-instruct"
+# model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1" - #TODO Revisar modelo.
 
 completion = client.chat.completions.create(
   model=model_id,

@@ -1,0 +1,214 @@
+{
+    "Task_metrics": [
+        {
+            "item": {
+                "id": "1A",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para solicitar productos hipotecarios necesitas documentación. Consulta en oficina."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "helpfulness_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "helpfulness_score": {
+                            "value": 2.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Helpfulness\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la utilidad de la respuesta del sistema IA considerando:\n- ¿La respuesta aborda completamente la consulta del cliente?\n- ¿Proporciona información relevante y aplicable al contexto bancario?\n- ¿Incluye pasos concretos o recomendaciones cuando es apropiado?\n- ¿Anticipa necesidades adicionales del cliente relacionadas con su consulta?\n\nEscala de evaluación:\n- 5: Respuesta completa, relevante y con valor añadido excepcional\n- 4: Respuesta muy buena que supera las expectativas\n- 3: Respuesta adecuada que cumple las expectativas\n- 2: Respuesta parcial o con información limitada\n- 1: Respuesta irrelevante o que no ayuda\n\nJustifica tu puntuación con ejemplos específicos de la respuesta.\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara solicitar productos hipotecarios necesitas documentación. Consulta en oficina. \n\nMuestra el siguiente formato de salida, sin nada adicional:\nMETRIC_VALUE: [Escala de evaluación]\nMETRIC_NAME: [METRIC_NAME] \nJUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "68574ae0eeac45c184445794a6f6607f",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 2\nMETRIC_NAME: Helpfulness \nJUSTIFICACION: La respuesta menciona que se necesita documentacion pero no especifica ningun documento concreto requerido para la Hipoteca Joven. No proporciona informacion relevante ni aplicable al contexto especifico de la consulta. Se limita a indicar \"consulta en oficina\" sin ofrecer pasos, recomendaciones o anticipar necesidades adicionales. La informacion es extremadamente limitada y deja al cliente sin orientacion util.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756811951,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 115,
+                            "prompt_tokens": 360,
+                            "total_tokens": 475,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1B",
+                "Consulta": "¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Las hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "helpfulness_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "helpfulness_score": {
+                            "value": 2.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Helpfulness\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la utilidad de la respuesta del sistema IA considerando:\n- ¿La respuesta aborda completamente la consulta del cliente?\n- ¿Proporciona información relevante y aplicable al contexto bancario?\n- ¿Incluye pasos concretos o recomendaciones cuando es apropiado?\n- ¿Anticipa necesidades adicionales del cliente relacionadas con su consulta?\n\nEscala de evaluación:\n- 5: Respuesta completa, relevante y con valor añadido excepcional\n- 4: Respuesta muy buena que supera las expectativas\n- 3: Respuesta adecuada que cumple las expectativas\n- 2: Respuesta parcial o con información limitada\n- 1: Respuesta irrelevante o que no ayuda\n\nJustifica tu puntuación con ejemplos específicos de la respuesta.\n\nTexto para analizar:\n¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?\nRespuesta: \nLas hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles. \n\nMuestra el siguiente formato de salida, sin nada adicional:\nMETRIC_VALUE: [Escala de evaluación]\nMETRIC_NAME: [METRIC_NAME] \nJUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "ad499fab9c3b4b39b19b6d24f1b85ee3",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 2\nMETRIC_NAME: Helpfulness \nJUSTIFICACION: La respuesta no aborda la consulta especifica sobre la Hipoteca Joven de Unicaja, solo menciona hipotecas en general sin datos concretos. No proporciona informacion relevante sobre porcentajes de financiacion ni condiciones especificas del producto mencionado. Omite pasos concretos y no anticipa necesidades adicionales del cliente.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756811964,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 94,
+                            "prompt_tokens": 362,
+                            "total_tokens": 456,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1C",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "helpfulness_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "helpfulness_score": {
+                            "value": 4.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Helpfulness\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la utilidad de la respuesta del sistema IA considerando:\n- ¿La respuesta aborda completamente la consulta del cliente?\n- ¿Proporciona información relevante y aplicable al contexto bancario?\n- ¿Incluye pasos concretos o recomendaciones cuando es apropiado?\n- ¿Anticipa necesidades adicionales del cliente relacionadas con su consulta?\n\nEscala de evaluación:\n- 5: Respuesta completa, relevante y con valor añadido excepcional\n- 4: Respuesta muy buena que supera las expectativas\n- 3: Respuesta adecuada que cumple las expectativas\n- 2: Respuesta parcial o con información limitada\n- 1: Respuesta irrelevante o que no ayuda\n\nJustifica tu puntuación con ejemplos específicos de la respuesta.\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España. \n\nMuestra el siguiente formato de salida, sin nada adicional:\nMETRIC_VALUE: [Escala de evaluación]\nMETRIC_NAME: [METRIC_NAME] \nJUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "e3a59b684600402da54b47faabdce7aa",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 4\nMETRIC_NAME: Helpfulness\nJUSTIFICACION: La respuesta aborda completamente la consulta al listar todos los documentos requeridos especificamente para la Hipoteca Joven de Unicaja. Proporciona informacion relevante y aplicable al contexto bancario, incluyendo requisitos clave como edad maxima y condicion de residencia habitual, que son esenciales para este producto. Incluye recomendaciones concretas al mencionar la necesidad de la tasacion del inmueble y documentos financieros especificos. Aunque es muy completa, podria anticipar mejor necesidades adicionales sugiriendo pasos siguientes o documentacion complementaria potencial.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756811968,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 147,
+                            "prompt_tokens": 418,
+                            "total_tokens": 565,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

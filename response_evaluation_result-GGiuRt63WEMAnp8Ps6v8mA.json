@@ -1,0 +1,37 @@
+{
+  "job": "eval-TTJ8ui4YHhRCBFoTEUC8Gz",
+  "id": "evaluation_result-GGiuRt63WEMAnp8Ps6v8mA",
+  "created_at": "2025-09-02T12:07:52.597665",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_metrics": {
+      "metrics": {
+        "claridad_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "claridad_score": {
+              "value": 2.3333333333333335,
+              "stats": {
+                "count": 3,
+                "max": null,
+                "mean": 2.3333333333333335,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 7.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-02T12:07:52.597667"
+}

@@ -1,0 +1,37 @@
+{
+  "job": "eval-Qf6jUh4L3kv7g7BnU6C8F8",
+  "id": "evaluation_result-67r9HxMrnsGPz9zQ9WSxno",
+  "created_at": "2025-09-02T12:14:21.711118",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_metrics": {
+      "metrics": {
+        "Toxicidad_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "Toxicidad_score": {
+              "value": 4.333333333333333,
+              "stats": {
+                "count": 3,
+                "max": null,
+                "mean": 4.333333333333333,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 13.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-02T12:14:21.711124"
+}

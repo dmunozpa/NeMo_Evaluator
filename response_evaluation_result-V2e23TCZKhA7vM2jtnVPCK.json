@@ -1,0 +1,37 @@
+{
+  "job": "eval-3u5fC9AVp92rPQUmmpGeh4",
+  "id": "evaluation_result-V2e23TCZKhA7vM2jtnVPCK",
+  "created_at": "2025-09-02T11:38:08.656719",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_metrics": {
+      "metrics": {
+        "helpfulness_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "helpfulness_score": {
+              "value": 2.6666666666666665,
+              "stats": {
+                "count": 3,
+                "max": null,
+                "mean": 2.6666666666666665,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 8.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-02T11:38:08.656721"
+}

@@ -1,0 +1,31 @@
+El METRIC_NAME es "Sentimiento"
+
+Como sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, analiza el sentimiento expresado en la respuesta:
+- Tono emocional general (positivo, neutral, negativo)
+- Adecuación del sentimiento al contexto de la consulta
+- Equilibrio entre empatía y profesionalidad
+- Capacidad de transmitir confianza y seguridad
+- Ausencia de tonos inapropiados (condescendiente, alarmista, etc.)
+
+Consideraciones específicas:
+- ¿El sentimiento es apropiado para una entidad financiera?
+- ¿Transmite confianza sin ser excesivamente optimista?
+- ¿Muestra comprensión hacia preocupaciones del cliente?
+- ¿Mantiene neutralidad profesional cuando es necesario?
+
+Clasifica el sentimiento utilizando ejemplos del texto y evalúa su adecuación utilizando la siguiente escala de puntuación:
+
+- Excepcional (5): Sentimiento perfectamente calibrado para el contexto.
+- Excelente (4): Sentimiento muy apropiado y bien modulado.
+- Buena (3): Sentimiento adecuado y profesional.
+- Regular (2): Sentimiento parcialmente inadecuado o desbalanceado.
+- Insuficiente (1): Sentimiento inapropiado para el contexto bancario.
+
+
+Texto para analizar:
+{{Consulta}}
+Respuesta: 
+{{Respuesta}} 
+
+A continuación, proporciona tu evaluación con el siguiente formato: 
+METRIC_VALUE: [Escala de evaluación]  \n METRIC_NAME: [NAME] \n JUSTIFICACION: [Detalle justificacion]

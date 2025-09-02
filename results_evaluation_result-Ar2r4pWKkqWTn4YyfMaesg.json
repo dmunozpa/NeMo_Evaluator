@@ -1,0 +1,214 @@
+{
+    "Task_metrics": [
+        {
+            "item": {
+                "id": "1A",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para solicitar productos hipotecarios necesitas documentación. Consulta en oficina."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "tonalidad_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "tonalidad_score": {
+                            "value": 2.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Tonalidad\"\n\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la consistencia de tono y estilo considerando:\n- Mantenimiento del registro profesional bancario apropiado\n- Consistencia en el nivel de formalidad a lo largo del texto\n- Adaptación adecuada al perfil del cliente (particular/empresa)\n- Equilibrio entre profesionalidad y accesibilidad\n- Coherencia en el uso de terminología específica\n\nAspectos específicos del sector bancario:\n- ¿El tono transmite confianza y profesionalidad?\n- ¿Es apropiado para el contexto de servicios financieros?\n- ¿Se mantiene consistente en toda la respuesta?\n- ¿Refleja los valores de la entidad bancaria?\n\nUtiliza la siguiente escala de puntuación e identifica ejemplos de consistencia o inconsistencias en el mensaje:\n\n- Excepcional (5): Tono perfectamente consistente y apropiado.\n- Excelente (4): Muy buena consistencia con variaciones mínimas.\n- Buena (3): Tono generalmente consistente y apropiado.\n- Regular (2): Algunas inconsistencias de tono o estilo.\n- Insuficiente (1): Tono inconsistente o inapropiado para el contexto.\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara solicitar productos hipotecarios necesitas documentación. Consulta en oficina. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "06649085a07f4d4886bb36e6f68a1d45",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 2  \nMETRIC_NAME: Tonalidad  \nJUSTIFICACION: La respuesta presenta inconsistencias en el tono y estilo. Inicia con un registro formal y técnico (\"productos hipotecarios\"), pero se vuelve abruptamente escueto y poco detallado (\"Consulta en oficina\"), lo que rompe el equilibrio entre profesionalidad y accesibilidad. No se adapta adecuadamente al perfil del cliente (pregunta específica de un particular) y transmite despersonalización. Aunque mantiene terminología bancaria básica, la falta de profundidad y calidez no refleja totalmente los valores de confianza y servicio al cliente esperados en entidades financieras.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756815046,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 152,
+                            "prompt_tokens": 448,
+                            "total_tokens": 600,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1B",
+                "Consulta": "¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Las hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "tonalidad_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "tonalidad_score": {
+                            "value": 2.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Tonalidad\"\n\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la consistencia de tono y estilo considerando:\n- Mantenimiento del registro profesional bancario apropiado\n- Consistencia en el nivel de formalidad a lo largo del texto\n- Adaptación adecuada al perfil del cliente (particular/empresa)\n- Equilibrio entre profesionalidad y accesibilidad\n- Coherencia en el uso de terminología específica\n\nAspectos específicos del sector bancario:\n- ¿El tono transmite confianza y profesionalidad?\n- ¿Es apropiado para el contexto de servicios financieros?\n- ¿Se mantiene consistente en toda la respuesta?\n- ¿Refleja los valores de la entidad bancaria?\n\nUtiliza la siguiente escala de puntuación e identifica ejemplos de consistencia o inconsistencias en el mensaje:\n\n- Excepcional (5): Tono perfectamente consistente y apropiado.\n- Excelente (4): Muy buena consistencia con variaciones mínimas.\n- Buena (3): Tono generalmente consistente y apropiado.\n- Regular (2): Algunas inconsistencias de tono o estilo.\n- Insuficiente (1): Tono inconsistente o inapropiado para el contexto.\n\nTexto para analizar:\n¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?\nRespuesta: \nLas hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "f4fa971af338408d933c3c931d2ab21b",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 2  \nMETRIC_NAME: Tonalidad  \nJUSTIFICACION: La respuesta muestra inconsistencias en el registro profesional bancario. Inicia con un tono vago y poco especifico (\"Las hipotecas tienen diferentes porcentajes de financiacion\"), lo cual no transmite confianza ni se adapta adecuadamente al contexto de servicios financieros. No refleja los valores de una entidad bancaria al omitir detalles concretos sobre el producto mencionado (Hipoteca Joven de Unicaja) y no mantener un equilibrio entre profesionalidad y accesibilidad. La falta de coherencia terminologica y adaptacion al perfil del cliente reduce la calidad general del tono.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756815049,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 150,
+                            "prompt_tokens": 450,
+                            "total_tokens": 600,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1C",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "tonalidad_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "tonalidad_score": {
+                            "value": 4.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Tonalidad\"\n\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la consistencia de tono y estilo considerando:\n- Mantenimiento del registro profesional bancario apropiado\n- Consistencia en el nivel de formalidad a lo largo del texto\n- Adaptación adecuada al perfil del cliente (particular/empresa)\n- Equilibrio entre profesionalidad y accesibilidad\n- Coherencia en el uso de terminología específica\n\nAspectos específicos del sector bancario:\n- ¿El tono transmite confianza y profesionalidad?\n- ¿Es apropiado para el contexto de servicios financieros?\n- ¿Se mantiene consistente en toda la respuesta?\n- ¿Refleja los valores de la entidad bancaria?\n\nUtiliza la siguiente escala de puntuación e identifica ejemplos de consistencia o inconsistencias en el mensaje:\n\n- Excepcional (5): Tono perfectamente consistente y apropiado.\n- Excelente (4): Muy buena consistencia con variaciones mínimas.\n- Buena (3): Tono generalmente consistente y apropiado.\n- Regular (2): Algunas inconsistencias de tono o estilo.\n- Insuficiente (1): Tono inconsistente o inapropiado para el contexto.\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "daea27e1d20943658758073110ffab39",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 4  \nMETRIC_NAME: Tonalidad  \nJUSTIFICACION: El tono mantiene un registro profesional adecuado para un contexto bancario, con lenguaje claro y directo. Es consistente en formalidad y accesibilidad, usando términos específicos del sector (nóminas, declaración de renta, tasación) de manera coherente. Transmite confianza al detallar requisitos precisos y condiciones claras. Una pequeña mejora sería incluir un saludo inicial para mayor calidez, pero no afecta significativamente la consistencia general.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756815052,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 127,
+                            "prompt_tokens": 506,
+                            "total_tokens": 633,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

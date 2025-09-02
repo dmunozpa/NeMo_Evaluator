@@ -1,0 +1,214 @@
+{
+    "Task_metrics": [
+        {
+            "item": {
+                "id": "1A",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para solicitar productos hipotecarios necesitas documentación. Consulta en oficina."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "coherencia_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "coherencia_score": {
+                            "value": 1.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Coherencia\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, analiza la coherencia y fluidez del texto evaluando:\n- Conexiones lógicas entre ideas y párrafos\n- Uso apropiado de conectores y transiciones\n- Estructura narrativa clara y progresiva\n- Ausencia de contradicciones internas\n- Fluidez en la lectura sin interrupciones abruptas\n\nCriterios específicos:\n- Las ideas se presentan en orden lógico\n- Cada párrafo conecta naturalmente con el siguiente\n- El texto mantiene un hilo conductor claro\n- No hay saltos temáticos injustificados\n\nPuntúa de 1-5 y explica con ejemplos del texto, qué elementos contribuyen o restan coherencia.\n\nJustifica tu puntuación con ejemplos específicos de la respuesta.\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara solicitar productos hipotecarios necesitas documentación. Consulta en oficina. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "93669a03d0e74fd3a0c8f9aae506a049",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 1  \nMETRIC_NAME: Coherencia  \nJUSTIFICACION: La respuesta presenta graves deficiencias en coherencia. No existe conexion logica entre las ideas: inicia mencionando documentacion necesaria pero inmediatamente deriva a una instruccion generica sin desarrollar el tema solicitado. No hay uso de conectores o transiciones, la estructura es fragmentada y carece de progresion narrativa. La ausencia de informacion especifica sobre la Hipoteca Joven de Unicaja crea una contradiccion interna con la pregunta original. La lectura se interrumpe abruptamente sin proporcionar los documentos solicitados, rompiendo completamente el hilo conductor. Ejemplo: la respuesta no lista documentos concretos ni establece relacion entre la consulta en oficina y la pregunta inicial.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756814391,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 174,
+                            "prompt_tokens": 358,
+                            "total_tokens": 532,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1B",
+                "Consulta": "¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Las hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "coherencia_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "coherencia_score": {
+                            "value": 2.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Coherencia\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, analiza la coherencia y fluidez del texto evaluando:\n- Conexiones lógicas entre ideas y párrafos\n- Uso apropiado de conectores y transiciones\n- Estructura narrativa clara y progresiva\n- Ausencia de contradicciones internas\n- Fluidez en la lectura sin interrupciones abruptas\n\nCriterios específicos:\n- Las ideas se presentan en orden lógico\n- Cada párrafo conecta naturalmente con el siguiente\n- El texto mantiene un hilo conductor claro\n- No hay saltos temáticos injustificados\n\nPuntúa de 1-5 y explica con ejemplos del texto, qué elementos contribuyen o restan coherencia.\n\nJustifica tu puntuación con ejemplos específicos de la respuesta.\n\nTexto para analizar:\n¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?\nRespuesta: \nLas hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "cd1b6996aead4ddca8e2a6f00823ee8f",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 2  \nMETRIC_NAME: Coherencia  \nJUSTIFICACION: La respuesta presenta problemas graves de coherencia. No existe conexion logica entre las ideas: la primera frase menciona porcentajes de financiacion de hipotecas en general, pero la segunda habla de \"varios tipos disponibles\" sin especificar si se refiere a hipotecas en general o a Unicaja. No hay transiciones entre oraciones, no se responde directamente a la pregunta sobre la Hipoteca Joven de Unicaja, y se produce un salto tematico abrupto al cambiar de porcentajes de financiacion a tipos de hipoteca sin aclarar la relacion. La estructura carece de hilo conductor y no progresa logicamente hacia una conclusion.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756814394,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 166,
+                            "prompt_tokens": 360,
+                            "total_tokens": 526,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1C",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "coherencia_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "coherencia_score": {
+                            "value": 5.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Coherencia\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, analiza la coherencia y fluidez del texto evaluando:\n- Conexiones lógicas entre ideas y párrafos\n- Uso apropiado de conectores y transiciones\n- Estructura narrativa clara y progresiva\n- Ausencia de contradicciones internas\n- Fluidez en la lectura sin interrupciones abruptas\n\nCriterios específicos:\n- Las ideas se presentan en orden lógico\n- Cada párrafo conecta naturalmente con el siguiente\n- El texto mantiene un hilo conductor claro\n- No hay saltos temáticos injustificados\n\nPuntúa de 1-5 y explica con ejemplos del texto, qué elementos contribuyen o restan coherencia.\n\nJustifica tu puntuación con ejemplos específicos de la respuesta.\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "733d952a83454927a590819690bbc7ec",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 5  \nMETRIC_NAME: Coherencia  \nJUSTIFICACION: El texto presenta una estructura clara y progresiva, enumerando los documentos necesarios en orden lógico y luego especificando los requisitos de edad y uso de la vivienda. Las ideas fluyen naturalmente sin contradicciones internas ni saltos temáticos. El uso del conector \"A continuación\" prepara adecuadamente al lector para la siguiente instrucción, manteniendo un hilo conductor claro. La ausencia de interrupciones abruptas y la conexión entre requisitos documentales y condiciones adicionales demuestra coherencia completa.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756814396,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 139,
+                            "prompt_tokens": 416,
+                            "total_tokens": 555,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

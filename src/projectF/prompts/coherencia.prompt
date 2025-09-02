@@ -1,0 +1,25 @@
+El METRIC_NAME es "Coherencia"
+Como sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, analiza la coherencia y fluidez del texto evaluando:
+- Conexiones lógicas entre ideas y párrafos
+- Uso apropiado de conectores y transiciones
+- Estructura narrativa clara y progresiva
+- Ausencia de contradicciones internas
+- Fluidez en la lectura sin interrupciones abruptas
+
+Criterios específicos:
+- Las ideas se presentan en orden lógico
+- Cada párrafo conecta naturalmente con el siguiente
+- El texto mantiene un hilo conductor claro
+- No hay saltos temáticos injustificados
+
+Puntúa de 1-5 y explica con ejemplos del texto, qué elementos contribuyen o restan coherencia.
+
+Justifica tu puntuación con ejemplos específicos de la respuesta.
+
+Texto para analizar:
+{{Consulta}}
+Respuesta: 
+{{Respuesta}} 
+
+A continuación, proporciona tu evaluación con el siguiente formato: 
+METRIC_VALUE: [Escala de evaluación]  \n METRIC_NAME: [NAME] \n JUSTIFICACION: [Detalle justificacion]
