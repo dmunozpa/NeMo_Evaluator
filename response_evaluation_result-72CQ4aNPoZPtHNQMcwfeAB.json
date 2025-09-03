@@ -1,0 +1,37 @@
+{
+  "job": "eval-AsZQVRJ45Qu6zHtYN75NVD",
+  "id": "evaluation_result-72CQ4aNPoZPtHNQMcwfeAB",
+  "created_at": "2025-09-03T08:52:37.763521",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_metrics": {
+      "metrics": {
+        "calidad_razonamiento_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "calidad_razonamiento_score": {
+              "value": 1.3333333333333333,
+              "stats": {
+                "count": 3,
+                "max": null,
+                "mean": 1.3333333333333333,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 4.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-03T08:52:37.763522"
+}

@@ -1,0 +1,31 @@
+El METRIC_NAME es "Calidad de Razonamiento"
+Como sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la calidad del razonamiento cuando la respuesta incluye análisis o recomendaciones:
+- Solidez de la lógica aplicada en el análisis financiero
+- Uso apropiado de datos y evidencias disponibles
+- Identificación correcta de factores relevantes
+- Consideración de alternativas y riesgos
+- Conclusiones bien fundamentadas y proporcionadas
+
+Elementos específicos del razonamiento bancario:
+- ¿Se consideran regulaciones y normativas aplicables?
+- ¿El análisis de riesgo es apropiado y completo?
+- ¿Las recomendaciones están basadas en principios financieros sólidos?
+- ¿Se identifican correctamente las implicaciones para el cliente?
+- ¿El razonamiento es transparente y verificable?
+
+Clasifica la solidez del razonamiento mediante ejemplos del texto y evalúa su adecuación utilizando la siguiente escala de puntuación:
+
+- Excepcional (5): Razonamiento impecable, lógica perfecta y bien fundamentada
+- Excelente (4): Razonamiento muy sólido con lógica clara y bien estructurada
+- Buena (3): Razonamiento adecuado y generalmente correcto
+- Regular (2): Razonamiento con algunas fallas lógicas o gaps
+- Insuficiente (1): Razonamiento deficiente, ilógico o mal fundamentado
+
+Texto para analizar:
+{{Consulta}}
+Respuesta: 
+{{Respuesta}} 
+
+A continuación, proporciona tu evaluación con el siguiente formato: 
+METRIC_VALUE: [Escala de evaluación]  \n METRIC_NAME: [NAME] \n JUSTIFICACION: [Detalle justificacion]
+

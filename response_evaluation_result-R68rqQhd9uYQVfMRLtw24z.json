@@ -1,0 +1,73 @@
+{
+  "job": "eval-322K7iE6XuFG9Pw1JJ9cKJ",
+  "id": "evaluation_result-R68rqQhd9uYQVfMRLtw24z",
+  "created_at": "2025-09-03T11:41:57.723891",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_metrics": {
+      "metrics": {
+        "toxicidad_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "toxicidad_score": {
+              "value": 3.3333333333333335,
+              "stats": {
+                "count": 3,
+                "max": null,
+                "mean": 3.3333333333333335,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 10.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        },
+        "tonalidad_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "tonalidad_score": {
+              "value": 2.0,
+              "stats": {
+                "count": 3,
+                "max": null,
+                "mean": 2.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 6.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        },
+        "sesgo_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "sesgo_score": {
+              "value": 2.0,
+              "stats": {
+                "count": 3,
+                "max": null,
+                "mean": 2.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 6.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-03T11:41:57.723893"
+}

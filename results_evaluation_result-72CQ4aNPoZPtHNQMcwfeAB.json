@@ -1,0 +1,214 @@
+{
+    "Task_metrics": [
+        {
+            "item": {
+                "id": "1A",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para solicitar productos hipotecarios necesitas documentación. Consulta en oficina."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "calidad_razonamiento_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "calidad_razonamiento_score": {
+                            "value": 1.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Calidad de Razonamiento\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la calidad del razonamiento cuando la respuesta incluye análisis o recomendaciones:\n- Solidez de la lógica aplicada en el análisis financiero\n- Uso apropiado de datos y evidencias disponibles\n- Identificación correcta de factores relevantes\n- Consideración de alternativas y riesgos\n- Conclusiones bien fundamentadas y proporcionadas\n\nElementos específicos del razonamiento bancario:\n- ¿Se consideran regulaciones y normativas aplicables?\n- ¿El análisis de riesgo es apropiado y completo?\n- ¿Las recomendaciones están basadas en principios financieros sólidos?\n- ¿Se identifican correctamente las implicaciones para el cliente?\n- ¿El razonamiento es transparente y verificable?\n\nClasifica la solidez del razonamiento mediante ejemplos del texto y evalúa su adecuación utilizando la siguiente escala de puntuación:\n\n- Excepcional (5): Razonamiento impecable, lógica perfecta y bien fundamentada\n- Excelente (4): Razonamiento muy sólido con lógica clara y bien estructurada\n- Buena (3): Razonamiento adecuado y generalmente correcto\n- Regular (2): Razonamiento con algunas fallas lógicas o gaps\n- Insuficiente (1): Razonamiento deficiente, ilógico o mal fundamentado\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara solicitar productos hipotecarios necesitas documentación. Consulta en oficina. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]\n"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "da76d19fb0a44aaa8c65fd4706e30a7d",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 1  \nMETRIC_NAME: Calidad de Razonamiento  \nJUSTIFICACION: La respuesta carece completamente de analisis financiero, no menciona regulaciones aplicables, no identifica factores relevantes para la Hipoteca Joven especifica, no considera alternativas ni riesgos, y no proporciona fundamentacion alguna. La respuesta es vaga, evasiva y no utiliza datos ni evidencias. No cumple con ninguno de los criterios de razonamiento bancario exigidos, mostrando una deficiencia total en la logica y estructura argumental.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756889560,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 126,
+                            "prompt_tokens": 474,
+                            "total_tokens": 600,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1B",
+                "Consulta": "¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Las hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "calidad_razonamiento_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "calidad_razonamiento_score": {
+                            "value": 1.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Calidad de Razonamiento\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la calidad del razonamiento cuando la respuesta incluye análisis o recomendaciones:\n- Solidez de la lógica aplicada en el análisis financiero\n- Uso apropiado de datos y evidencias disponibles\n- Identificación correcta de factores relevantes\n- Consideración de alternativas y riesgos\n- Conclusiones bien fundamentadas y proporcionadas\n\nElementos específicos del razonamiento bancario:\n- ¿Se consideran regulaciones y normativas aplicables?\n- ¿El análisis de riesgo es apropiado y completo?\n- ¿Las recomendaciones están basadas en principios financieros sólidos?\n- ¿Se identifican correctamente las implicaciones para el cliente?\n- ¿El razonamiento es transparente y verificable?\n\nClasifica la solidez del razonamiento mediante ejemplos del texto y evalúa su adecuación utilizando la siguiente escala de puntuación:\n\n- Excepcional (5): Razonamiento impecable, lógica perfecta y bien fundamentada\n- Excelente (4): Razonamiento muy sólido con lógica clara y bien estructurada\n- Buena (3): Razonamiento adecuado y generalmente correcto\n- Regular (2): Razonamiento con algunas fallas lógicas o gaps\n- Insuficiente (1): Razonamiento deficiente, ilógico o mal fundamentado\n\nTexto para analizar:\n¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?\nRespuesta: \nLas hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]\n"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "cc34c9dea1564e98b71dab63948ce28b",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 1  \nMETRIC_NAME: Calidad de Razonamiento  \nJUSTIFICACION: La respuesta carece de analisis financiero, no utiliza datos o evidencias, omite regulaciones bancarias, no identifica factores relevantes como LTV (loan-to-value) ni considera riesgos. No menciona normativas europeas o españolas (como directivas MIFID o criterios del BCE), no evalua implicaciones para el cliente, y las afirmaciones son vagas sin fundamento lógico. El razonamiento es deficiente y no responde a la consulta especifica sobre la Hipoteca Joven de Unicaja.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756889562,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 141,
+                            "prompt_tokens": 476,
+                            "total_tokens": 617,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1C",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "calidad_razonamiento_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "calidad_razonamiento_score": {
+                            "value": 2.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Calidad de Razonamiento\"\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa la calidad del razonamiento cuando la respuesta incluye análisis o recomendaciones:\n- Solidez de la lógica aplicada en el análisis financiero\n- Uso apropiado de datos y evidencias disponibles\n- Identificación correcta de factores relevantes\n- Consideración de alternativas y riesgos\n- Conclusiones bien fundamentadas y proporcionadas\n\nElementos específicos del razonamiento bancario:\n- ¿Se consideran regulaciones y normativas aplicables?\n- ¿El análisis de riesgo es apropiado y completo?\n- ¿Las recomendaciones están basadas en principios financieros sólidos?\n- ¿Se identifican correctamente las implicaciones para el cliente?\n- ¿El razonamiento es transparente y verificable?\n\nClasifica la solidez del razonamiento mediante ejemplos del texto y evalúa su adecuación utilizando la siguiente escala de puntuación:\n\n- Excepcional (5): Razonamiento impecable, lógica perfecta y bien fundamentada\n- Excelente (4): Razonamiento muy sólido con lógica clara y bien estructurada\n- Buena (3): Razonamiento adecuado y generalmente correcto\n- Regular (2): Razonamiento con algunas fallas lógicas o gaps\n- Insuficiente (1): Razonamiento deficiente, ilógico o mal fundamentado\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]\n"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "090fe3ee1cd649ca8e9b79567c7d5bce",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 2  \nMETRIC_NAME: Calidad de Razonamiento  \nJUSTIFICACION: La respuesta enumera documentos requeridos pero carece de analisis financiero o razonamiento profundo. No se mencionan regulaciones aplicables, analisis de riesgos, alternativas, principios financieros o implicaciones para el cliente. La justificacion es meramente descriptiva sin estructura logica demostrable. Cumple minimamente al listar requisitos basicos pero omite todo elemento de razonamiento bancario sustancial exigido en la metric.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756889564,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 120,
+                            "prompt_tokens": 532,
+                            "total_tokens": 652,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

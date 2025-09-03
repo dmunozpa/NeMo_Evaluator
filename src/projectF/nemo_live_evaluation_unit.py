@@ -20,7 +20,7 @@ model_id = "deepseek-ai/deepseek-v3.1"
 #model_id = "nvidia/llama-3.3-nemotron-super-49b-v1.5"
 base_url = "https://integrate.api.nvidia.com/v1"
 
-metrica = "Sentimiento"
+metrica = "instruccion_following"
 
 pattern_score = "METRIC_VALUE:\s*(\d+)\s"
 #pattern_score = "\nMETRIC_VALUE: (\\d)"
@@ -125,8 +125,8 @@ print(f"Results: {response.result}")
 print(f"Status Details: {response.status_details}" )
 
 id = response.result.id
-
 log = response.logs
+
 with open(f'results_{id}.json','w+', encoding="utf-8") as jf:
     json.dump(log, jf, ensure_ascii=False, indent=4)
 

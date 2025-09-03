@@ -1,0 +1,214 @@
+{
+    "Task_metrics": [
+        {
+            "item": {
+                "id": "1A",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para solicitar productos hipotecarios necesitas documentación. Consulta en oficina."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "instruccion_following_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "instruccion_following_score": {
+                            "value": 1.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Instrucción-following\"\n\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa el cumplimiento de instrucciones analizando:\n- Simplicidad del lenguaje sin sacrificar precisión técnica.\n- Ausencia de ambigüedades en conceptos bancarios.\n- Explicaciones comprensibles para el perfil del cliente.\n- Estructura de información clara (general a específico).\n- Uso apropiado de ejemplos cuando sea necesario.\n\nAspectos específicos:\n- ¿Los términos financieros están explicados adecuadamente?\n- ¿La información está organizada de forma comprensible?\n- ¿Evita jerga innecesaria manteniendo precisión?\n- ¿Las instrucciones o recomendaciones son específicas y claras?\n\nUtiliza la siguiente escala de puntuación y justifica tu puntuación con ejemplos específicos del texto:\n\n- Excepcional (5): Comunicación cristalina, perfectamente comprensible.\n- Excelente (4): Muy clara con mínimas ambigüedades.\n- Buena (3): Clara y comprensible en general.\n- Regular (2): Algunas confusiones o falta de claridad.\n- Insuficiente (1): Confusa, ambigua o incomprensible.\n\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara solicitar productos hipotecarios necesitas documentación. Consulta en oficina. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "8f0eaac77e414cdda528160517b22450",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 1  \nMETRIC_NAME: Instrucción-following  \nJUSTIFICACION: La respuesta es insuficiente porque no cumple con ninguno de los criterios establecidos. No explica términos financieros, omite detalles específicos sobre la documentación requerida para la Hipoteca Joven de Unicaja, carece de estructura clara (de general a específico), y utiliza lenguaje vago como \"consulta en oficina\" en lugar de proporcionar ejemplos o información concreta. La respuesta es ambigua y no se adapta al perfil del cliente, incumpliendo las normativas de claridad y precisión exigidas.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756891141,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 145,
+                            "prompt_tokens": 442,
+                            "total_tokens": 587,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1B",
+                "Consulta": "¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Las hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "instruccion_following_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "instruccion_following_score": {
+                            "value": 1.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Instrucción-following\"\n\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa el cumplimiento de instrucciones analizando:\n- Simplicidad del lenguaje sin sacrificar precisión técnica.\n- Ausencia de ambigüedades en conceptos bancarios.\n- Explicaciones comprensibles para el perfil del cliente.\n- Estructura de información clara (general a específico).\n- Uso apropiado de ejemplos cuando sea necesario.\n\nAspectos específicos:\n- ¿Los términos financieros están explicados adecuadamente?\n- ¿La información está organizada de forma comprensible?\n- ¿Evita jerga innecesaria manteniendo precisión?\n- ¿Las instrucciones o recomendaciones son específicas y claras?\n\nUtiliza la siguiente escala de puntuación y justifica tu puntuación con ejemplos específicos del texto:\n\n- Excepcional (5): Comunicación cristalina, perfectamente comprensible.\n- Excelente (4): Muy clara con mínimas ambigüedades.\n- Buena (3): Clara y comprensible en general.\n- Regular (2): Algunas confusiones o falta de claridad.\n- Insuficiente (1): Confusa, ambigua o incomprensible.\n\n\nTexto para analizar:\n¿Puedo financiar el 100% con la Hipoteca Joven de Unicaja?\nRespuesta: \nLas hipotecas tienen diferentes porcentajes de financiación. Hay varios tipos disponibles. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "48aa4f9495d64689882b708e2a789ec1",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 1  \nMETRIC_NAME: Instrucción-following  \nJUSTIFICACION: La respuesta no aborda la pregunta especifica sobre la Hipoteca Joven de Unicaja. Es vaga (\"Hay varios tipos disponibles\"), carece de precision tecnica (no menciona porcentajes concretos ni condiciones) y omite ejemplos o estructura logica. Incumple todos los criterios: lenguaje impreciso, ambigüedad total, falta de adaptacion al cliente y ausencia de organizacion clara.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756891144,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 116,
+                            "prompt_tokens": 444,
+                            "total_tokens": 560,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "item": {
+                "id": "1C",
+                "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
+                "Respuesta": "Para la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España."
+            },
+            "sample": {
+                "output_text": null,
+                "response": {}
+            },
+            "metrics": {
+                "instruccion_following_deepseek-ai/deepseek-v3.1": {
+                    "scores": {
+                        "instruccion_following_score": {
+                            "value": 4.0,
+                            "stats": null
+                        }
+                    }
+                }
+            },
+            "requests": [
+                {
+                    "request": {
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: \nMETRIC_VALUE: X  \nMETRIC_NAME: [NAME] \nJUSTIFICACION: [Detalle justificacion]",
+                                "temperature": 0,
+                                "top_p": 0.9
+                            },
+                            {
+                                "role": "user",
+                                "content": "El METRIC_NAME es \"Instrucción-following\"\n\nComo sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa el cumplimiento de instrucciones analizando:\n- Simplicidad del lenguaje sin sacrificar precisión técnica.\n- Ausencia de ambigüedades en conceptos bancarios.\n- Explicaciones comprensibles para el perfil del cliente.\n- Estructura de información clara (general a específico).\n- Uso apropiado de ejemplos cuando sea necesario.\n\nAspectos específicos:\n- ¿Los términos financieros están explicados adecuadamente?\n- ¿La información está organizada de forma comprensible?\n- ¿Evita jerga innecesaria manteniendo precisión?\n- ¿Las instrucciones o recomendaciones son específicas y claras?\n\nUtiliza la siguiente escala de puntuación y justifica tu puntuación con ejemplos específicos del texto:\n\n- Excepcional (5): Comunicación cristalina, perfectamente comprensible.\n- Excelente (4): Muy clara con mínimas ambigüedades.\n- Buena (3): Clara y comprensible en general.\n- Regular (2): Algunas confusiones o falta de claridad.\n- Insuficiente (1): Confusa, ambigua o incomprensible.\n\n\nTexto para analizar:\n¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?\nRespuesta: \nPara la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España. \n\nA continuación, proporciona tu evaluación con el siguiente formato: \nMETRIC_VALUE: [Escala de evaluación]  \\n METRIC_NAME: [NAME] \\n JUSTIFICACION: [Detalle justificacion]"
+                            }
+                        ]
+                    },
+                    "response": {
+                        "id": "f77c40b0dc8846ab8b4c51782a2af609",
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "index": 0,
+                                "logprobs": null,
+                                "message": {
+                                    "content": "METRIC_VALUE: 4  \nMETRIC_NAME: Instrucción-following  \nJUSTIFICACION: La respuesta es muy clara y cumple con los criterios: enumera documentos de forma precisa sin jerga innecesaria, explica condiciones como edad y uso de vivienda de manera comprensible, y estructura la información de forma lógica (requisitos generales primero, condiciones especificas despues). Solo se podria mejorar añadiendo breves aclaraciones sobre proposito de documentos (ej: \"declaracion de renta para verificar ingresos anuales\") para alcanzar nivel excepcional.",
+                                    "role": "assistant",
+                                    "tool_calls": null,
+                                    "reasoning_content": null
+                                },
+                                "matched_stop": 1
+                            }
+                        ],
+                        "created": 1756891146,
+                        "model": "deepseek-ai/deepseek-v3.1",
+                        "object": "chat.completion",
+                        "usage": {
+                            "completion_tokens": 135,
+                            "prompt_tokens": 500,
+                            "total_tokens": 635,
+                            "prompt_tokens_details": null,
+                            "reasoning_tokens": 0
+                        },
+                        "metadata": {
+                            "weight_version": "default"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
