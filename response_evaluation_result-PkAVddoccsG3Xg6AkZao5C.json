@@ -1,7 +1,7 @@
 {
-  "job": "eval-Ep3ob1R3nwp987gsXd9uWq",
-  "id": "evaluation_result-E59a3otCS69wreEeJy1hPW",
-  "created_at": "2025-09-04T09:45:07.760047",
+  "job": "eval-XaW6c2TemCQ7pS8v49yseu",
+  "id": "evaluation_result-PkAVddoccsG3Xg6AkZao5C",
+  "created_at": "2025-09-04T12:47:52.209604",
   "custom_fields": {},
   "description": null,
   "files_url": null,
@@ -185,7 +185,29 @@
           }
         }
       }
+    },
+    "Task_instruccion_following": {
+      "metrics": {
+        "instruccion_following_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "instruccion_following_score": {
+              "value": 4.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 4.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 4.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
     }
   },
-  "updated_at": "2025-09-04T09:45:07.760049"
+  "updated_at": "2025-09-04T12:47:52.209605"
 }

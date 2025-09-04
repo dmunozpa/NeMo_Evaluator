@@ -23,7 +23,11 @@ def leer_prompt(name):
 
 ### MODELO EN ONLINE
 # model_id = "meta/llama-3.3-70b-instruct"
-model_id = "meta/llama-3.1-8b-instruct"
+
+models = ["meta/llama-3.1-8b-instruct","deepseek-ai/deepseek-v3.1", "meta/llama-3.3-70b-instruct" ]
+
+models = ["meta/llama-3.1-8b-instruct"]
+#model_id = "meta/llama-3.1-8b-instruct"
 # model_id = "deepseek-ai/deepseek-v3.1"
 # model_id = "nvidia/llama-3.3-nemotron-super-49b-v1.5"
 base_url = "https://integrate.api.nvidia.com/v1"
@@ -65,10 +69,11 @@ def build_config(
                         }
                     },
                     "extra": {
-                        "batch-size": 2, 
-                        "max-tokens": 10, 
-                        "temperature": 0.1
-                        },
+                        "batch_size": 8,
+                        "use_gredy": True,
+                        "top_k": 1,
+                        "limit_samples": 100,
+                    },
                     "template": {
                         "messages": [
                             {
@@ -110,8 +115,12 @@ def build_config(
         "type": "custom",
         "timeout": None,
         "params": {
-            "parallelims": 10,
-            "max-tokens": 10,
+            "parallelims": 20,
+            "temperature": 0.1,
+            "top_p": 0.0,
+            "max_tokens": 16,
+            "max_retries": 1,
+            "request_timeout": 10
         },
         "tasks": tasks,
     }
@@ -146,60 +155,54 @@ rows = [
     },
 ]
 
-config, target = build_config(
-    project_name="demo_oxigeno",
-    base_url=base_url,
-    model_id=model_id,
-    api_key="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",  # usa tu API key real
-    lista_metricas=lista_metricas,
-    rows=rows,
-    pattern_score=pattern_score,
-)
+
+for model_id in models:
+     
+    config, target = build_config(
+        project_name="demo_oxigeno",
+        base_url=base_url,
+        model_id=model_id,
+        api_key="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",  # usa tu API key real
+        lista_metricas=lista_metricas,
+        rows=rows,
+        pattern_score=pattern_score,
+    )
+  
+    now = datetime.now()
+    response = client.evaluation.live(
+        config=config,
+        target=target,
+    )
+    latencia = datetime.now() - now
+
+    print(f"Latencia: {latencia.seconds} seg.")
+    print(f"Status: {response.status}")
+    print(f"Results: {response.result}")
+    print(f"Status Details: {response.status_details}")
+
+    id = response.result.id
+    log = response.logs
+    with open(f"results_{id}.json", "w+", encoding="utf-8") as jf:
+        json.dump(log, jf, ensure_ascii=False, indent=4)
+
+    # Función para serializar objetos no compatibles con JSON
+    def custom_serializer(obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        elif hasattr(obj, "__dict__"):
+            return {key: custom_serializer(value) for key, value in obj.__dict__.items()}
+        elif isinstance(obj, dict):
+            return {key: custom_serializer(value) for key, value in obj.items()}
+        elif isinstance(obj, list):
+            return [custom_serializer(item) for item in obj]
+        else:
+            return obj
 
 
-now = datetime.now()
+    # Ejemplo de uso con tu objeto (reemplaza 'evaluation' con tu instancia real)
+    json_output = json.dumps(response.result, default=custom_serializer, indent=2)
 
-response = client.evaluation.live(
-    config=config,
-    target=target,
-)
-
-latencia = datetime.now() - now
-print(f"Latencia: {latencia.seconds} seg.")
-
-# Get the job ID and
-# print status
-print(f"Status: {response.status}")
-print(f"Results: {response.result}")
-print(f"Status Details: {response.status_details}")
-
-id = response.result.id
-
-log = response.logs
-with open(f"results_{id}.json", "w+", encoding="utf-8") as jf:
-    json.dump(log, jf, ensure_ascii=False, indent=4)
+    with open(f"response_{id}.json", "w+") as f:
+        f.write(json_output)
 
 
-EvaluationStatusDetails = response.status_details
-evalutationResult_json = response.result.model_dump_json
-
-
-# Función para serializar objetos no compatibles con JSON
-def custom_serializer(obj):
-    if isinstance(obj, datetime):
-        return obj.isoformat()
-    elif hasattr(obj, "__dict__"):
-        return {key: custom_serializer(value) for key, value in obj.__dict__.items()}
-    elif isinstance(obj, dict):
-        return {key: custom_serializer(value) for key, value in obj.items()}
-    elif isinstance(obj, list):
-        return [custom_serializer(item) for item in obj]
-    else:
-        return obj
-
-
-# Ejemplo de uso con tu objeto (reemplaza 'evaluation' con tu instancia real)
-json_output = json.dumps(response.result, default=custom_serializer, indent=2)
-
-with open(f"response_{id}.json", "w+") as f:
-    f.write(json_output)
