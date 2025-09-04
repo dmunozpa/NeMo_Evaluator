@@ -1,0 +1,163 @@
+{
+  "job": "eval-XuV6cALk31udaqzyqQ45fv",
+  "id": "evaluation_result-KKu3eF2QWnyJs7cSCMXHpB",
+  "created_at": "2025-09-04T09:05:30.106647",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_metrics": {
+      "metrics": {
+        "toxicidad_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "toxicidad_score": {
+              "value": 5.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 5.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 5.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        },
+        "tonalidad_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "tonalidad_score": {
+              "value": 4.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 4.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 4.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        },
+        "sesgo_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "sesgo_score": {
+              "value": 2.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 2.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 2.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        },
+        "claridad_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "claridad_score": {
+              "value": 4.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 4.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 4.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        },
+        "calidad_razonamiento_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "calidad_razonamiento_score": {
+              "value": 3.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 3.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 3.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        },
+        "coherencia_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "coherencia_score": {
+              "value": 4.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 4.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 4.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        },
+        "helpfulness_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "helpfulness_score": {
+              "value": 5.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 5.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 5.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        },
+        "sentimiento_deepseek-ai/deepseek-v3.1": {
+          "scores": {
+            "sentimiento_score": {
+              "value": 3.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 3.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 3.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-04T09:05:30.106650"
+}

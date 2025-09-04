@@ -1,5 +1,7 @@
 import os, json
-from nemo_microservices import NeMoMicroservices
+from nemo_microservices import NeMoMicroservices 
+from datetime import datetime
+
 
 # Initialize the client
 client = NeMoMicroservices(base_url="http://localhost:7331")
@@ -21,12 +23,11 @@ def leer_prompt(name):
 
 ### MODELO EN ONLINE
 # model_id = "meta/llama-3.3-70b-instruct"
-model_id = "deepseek-ai/deepseek-v3.1"
+model_id = "meta/llama-3.1-8b-instruct"
+#model_id = "deepseek-ai/deepseek-v3.1"
 # model_id = "nvidia/llama-3.3-nemotron-super-49b-v1.5"
 base_url = "https://integrate.api.nvidia.com/v1"
 
-metrica1 = "hallucination_rate"
-metrica2 = "claridad"
 
 pattern_score = "METRIC_VALUE: (\\d)"
 
@@ -91,7 +92,7 @@ def build_config(project_name, base_url, model_id, api_key, metricas, rows, patt
         "type": "custom",
         "timeout": None,
         "params": {
-            "parallelims": 9,
+            "parallelims": 10,
         },
         "tasks": {
             "Task_metrics": {
@@ -134,12 +135,18 @@ config, target = build_config(
 )
 
 
+now = datetime.now()
+
 response = client.evaluation.live(
     config=config,
     target=target,
 )
 
-# Get the job ID and status
+latencia = datetime.now() - now
+print(f"Latencia: {latencia.seconds} seg.")
+
+# Get the job ID and
+# print status
 print(f"Status: {response.status}")
 print(f"Results: {response.result}")
 print(f"Status Details: {response.status_details}")
@@ -154,8 +161,6 @@ with open(f"results_{id}.json", "w+", encoding="utf-8") as jf:
 EvaluationStatusDetails = response.status_details
 evalutationResult_json = response.result.model_dump_json
 
-
-from datetime import datetime
 
 
 # Función para serializar objetos no compatibles con JSON
