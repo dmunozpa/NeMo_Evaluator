@@ -1,5 +1,5 @@
 import os, json
-from nemo_microservices import NeMoMicroservices 
+from nemo_microservices import NeMoMicroservices
 from datetime import datetime
 
 
@@ -24,7 +24,7 @@ def leer_prompt(name):
 ### MODELO EN ONLINE
 # model_id = "meta/llama-3.3-70b-instruct"
 model_id = "meta/llama-3.1-8b-instruct"
-#model_id = "deepseek-ai/deepseek-v3.1"
+# model_id = "deepseek-ai/deepseek-v3.1"
 # model_id = "nvidia/llama-3.3-nemotron-super-49b-v1.5"
 base_url = "https://integrate.api.nvidia.com/v1"
 
@@ -32,10 +32,12 @@ base_url = "https://integrate.api.nvidia.com/v1"
 pattern_score = "METRIC_VALUE: (\\d)"
 
 
-def build_config(project_name, base_url, model_id, api_key, metricas, rows, pattern_score):
+def build_config(
+    project_name, base_url, model_id, api_key, metricas, rows, pattern_score
+):
     """
     Construye dinámicamente la configuración para client.evaluation.live
-    
+
     Args:
         project_name (str): Nombre del proyecto
         base_url (str): Endpoint base del modelo
@@ -111,9 +113,18 @@ def build_config(project_name, base_url, model_id, api_key, metricas, rows, patt
 
 
 # Ejemplo de uso
-#metricas = ["toxicidad", "tonalidad", "sesgo","claridad","calidad_razonamiento","coherencia","helpfulness","sentimiento"]
+# metricas = ["toxicidad", "tonalidad", "sesgo","claridad","calidad_razonamiento","coherencia","helpfulness","sentimiento"]
 
-metricas = ["toxicidad", "tonalidad", "sesgo","claridad","calidad_razonamiento","coherencia","helpfulness","sentimiento"]
+metricas = [
+    "toxicidad",
+    "tonalidad",
+    "sesgo",
+    "claridad",
+    "calidad_razonamiento",
+    "coherencia",
+    "helpfulness",
+    "sentimiento",
+]
 
 
 rows = [
@@ -128,7 +139,7 @@ config, target = build_config(
     project_name="demo_oxigeno",
     base_url=base_url,
     model_id=model_id,
-    api_key="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",   # usa tu API key real
+    api_key="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",  # usa tu API key real
     metricas=metricas,
     rows=rows,
     pattern_score=pattern_score,
@@ -160,7 +171,6 @@ with open(f"results_{id}.json", "w+", encoding="utf-8") as jf:
 
 EvaluationStatusDetails = response.status_details
 evalutationResult_json = response.result.model_dump_json
-
 
 
 # Función para serializar objetos no compatibles con JSON

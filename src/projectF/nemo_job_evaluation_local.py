@@ -8,20 +8,19 @@ client = NeMoMicroservices(base_url="http://localhost:7331")
 
 httpx.Timeout(900.0)
 
+
 def leer_prompt(name):
     with open(f"./prompts/{name}.prompt", encoding="utf-8") as f:
         return f.read()
 
 
-
-
-#model_id = "openai/gpt-oss-20b"
+# model_id = "openai/gpt-oss-20b"
 model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
 base_url = "http://host.docker.internal:1234/v1"
 
 
-#model_id = "meta/llama-3.3-70b-instruct"
-#base_url = "https://integrate.api.nvidia.com/v1"
+# model_id = "meta/llama-3.3-70b-instruct"
+# base_url = "https://integrate.api.nvidia.com/v1"
 
 metrica = "helpfulness"
 
@@ -35,8 +34,8 @@ job = client.evaluation.jobs.create(
         "project": "demo_oxigeno",
         "type": "custom",
         "timeout": None,
-        "params":{
-          "parallelism" : 10,  
+        "params": {
+            "parallelism": 10,
         },
         "tasks": {
             f"Task_metrica_{metrica}": {
@@ -102,7 +101,7 @@ job = client.evaluation.jobs.create(
     },
 )
 
-'''
+"""
 * Ejemplo 1A:
 - Consulta: "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?"
 - Respuesta IA: "Para solicitar productos hipotecarios necesitas documentación. Consulta en oficina."
@@ -117,7 +116,7 @@ job = client.evaluation.jobs.create(
 - Consulta: "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?"
 - Respuesta IA: "Para la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España."
 - Puntuación esperada: 3 - Respuesta completa con requisitos específicos de Unicaja
-'''
+"""
 
 # Get the job ID and status
 job_id = job.id

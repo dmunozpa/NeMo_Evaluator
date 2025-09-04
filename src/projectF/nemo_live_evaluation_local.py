@@ -8,20 +8,19 @@ client = NeMoMicroservices(base_url="http://localhost:7331")
 
 httpx.Timeout(900.0)
 
+
 def leer_prompt(name):
     with open(f"./prompts/{name}.prompt", encoding="utf-8") as f:
         return f.read()
 
 
-
-
-#model_id = "openai/gpt-oss-20b"
+# model_id = "openai/gpt-oss-20b"
 model_id = "nvidia_llama-3.1-nemotron-nano-8b-v1"
 base_url = "http://host.docker.internal:1234/v1"
 
 
-#model_id = "meta/llama-3.3-70b-instruct"
-#base_url = "https://integrate.api.nvidia.com/v1"
+# model_id = "meta/llama-3.3-70b-instruct"
+# base_url = "https://integrate.api.nvidia.com/v1"
 
 metrica = "hallucination_rate"
 
@@ -34,10 +33,7 @@ response = client.evaluation.live(
     config={
         "project": "demo_oxigeno",
         "type": "custom",
-        "params": {
-            "request_timeout": 999,
-            "parallelism": 2
-            },
+        "params": {"request_timeout": 999, "parallelism": 2},
         "tasks": {
             f"metrica_{metrica}_formato_nuevo": {
                 "type": "data",
@@ -49,7 +45,7 @@ response = client.evaluation.live(
                                 "api_endpoint": {
                                     "url": base_url,
                                     "model_id": model_id,
-                                    "api_key": "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", 
+                                    "api_key": "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",
                                 }
                             },
                             "template": {
@@ -99,8 +95,7 @@ print(f"Status: {response.status}")
 print(f"Results: {response.result}")
 
 
-
 # Download evaluation results
 
 # Save to file
-#results_zip.write_to_file(f'./result/Result_1.zip')
+# results_zip.write_to_file(f'./result/Result_1.zip')

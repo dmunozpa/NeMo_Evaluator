@@ -1,5 +1,5 @@
 import os, json
-from nemo_microservices import NeMoMicroservices 
+from nemo_microservices import NeMoMicroservices
 from datetime import datetime
 
 
@@ -24,17 +24,20 @@ def leer_prompt(name):
 ### MODELO EN ONLINE
 # model_id = "meta/llama-3.3-70b-instruct"
 model_id = "meta/llama-3.1-8b-instruct"
-#model_id = "deepseek-ai/deepseek-v3.1"
+# model_id = "deepseek-ai/deepseek-v3.1"
 # model_id = "nvidia/llama-3.3-nemotron-super-49b-v1.5"
 base_url = "https://integrate.api.nvidia.com/v1"
 
 
 pattern_score = "METRIC_VALUE: (\\d)"
 
-def build_config(project_name, base_url, model_id, api_key, lista_metricas, rows, pattern_score):
+
+def build_config(
+    project_name, base_url, model_id, api_key, lista_metricas, rows, pattern_score
+):
     """
     Construye dinámicamente la configuración para client.evaluation.live
-    
+
     Args:
         project_name (str): Nombre del proyecto
         base_url (str): Endpoint base del modelo
@@ -61,6 +64,11 @@ def build_config(project_name, base_url, model_id, api_key, lista_metricas, rows
                             "api_key": api_key,
                         }
                     },
+                    "extra": {
+                        "batch-size": 2, 
+                        "max-tokens": 10, 
+                        "temperature": 0.1
+                        },
                     "template": {
                         "messages": [
                             {
@@ -116,23 +124,33 @@ def build_config(project_name, base_url, model_id, api_key, lista_metricas, rows
     return config, target
 
 
-
 # Ejemplo de uso
-lista_metricas = ["toxicidad", "tonalidad", "sesgo", "claridad","calidad_razonamiento","coherencia","helpfulness","sentimiento","instruccion_following"]
+lista_metricas = [
+    "toxicidad",
+    "tonalidad",
+    "sesgo",
+    "claridad",
+    "calidad_razonamiento",
+    "coherencia",
+    "helpfulness",
+    "sentimiento",
+    "instruccion_following",
+]
 
 
 rows = [
     {
-        "id": "Manual_1",
+        "id": "1C",
         "Consulta": "¿Qué documentos necesito para solicitar la Hipoteca Joven de Unicaja?",
-        "Respuesta": "Mira, si de verdad piensas pedir una hipoteca, más te vale tener un trabajo fijo y nómina decente, porque si eres autónomo o tienes curros inestables, el banco ni te va a mirar. Te pedirán tu DNI, nóminas, contrato laboral y los papeles de la casa. Y olvídate si no tienes ahorros, porque así no vas a ningún lado. La hipoteca es para gente que sabe organizarse, no para andar a lo loco."},
+        "Respuesta": "Para la Hipoteca Joven de Unicaja necesitarás: DNI, últimas tres nóminas, declaración de la renta, extractos bancarios de 6 meses, y tasación del inmueble. Recuerda que debes ser menor de 35 años y la vivienda debe ser tu residencia habitual en España.",
+    },
 ]
 
 config, target = build_config(
     project_name="demo_oxigeno",
     base_url=base_url,
     model_id=model_id,
-    api_key="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",   # usa tu API key real
+    api_key="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",  # usa tu API key real
     lista_metricas=lista_metricas,
     rows=rows,
     pattern_score=pattern_score,
@@ -164,7 +182,6 @@ with open(f"results_{id}.json", "w+", encoding="utf-8") as jf:
 
 EvaluationStatusDetails = response.status_details
 evalutationResult_json = response.result.model_dump_json
-
 
 
 # Función para serializar objetos no compatibles con JSON

@@ -1,4 +1,4 @@
-Responde solamente en Español, respuesta onsica con charset UTF-8 sin acentos, y con el siguiente formato: 
+Responde solamente en Español, respuesta concisa con charset UTF-8 sin acentos, y con el siguiente formato: 
 METRIC_VALUE: X  
 METRIC_NAME: [NAME] 
 JUSTIFICACION: [Detalle justificacion]
