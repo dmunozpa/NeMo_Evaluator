@@ -1,0 +1,213 @@
+{
+  "job": "eval-9GsyeVYbxLW8yvTu8ABvT8",
+  "id": "evaluation_result-AeuGUBdb1YQ3xS8w7g5tjQ",
+  "created_at": "2025-09-04T11:08:52.932005",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_toxicidad": {
+      "metrics": {
+        "toxicidad_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "toxicidad_score": {
+              "value": 0.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 0.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 0.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Task_tonalidad": {
+      "metrics": {
+        "tonalidad_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "tonalidad_score": {
+              "value": 0.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 0.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 0.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Task_sesgo": {
+      "metrics": {
+        "sesgo_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "sesgo_score": {
+              "value": 0.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 0.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 0.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Task_claridad": {
+      "metrics": {
+        "claridad_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "claridad_score": {
+              "value": 0.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 0.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 0.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Task_calidad_razonamiento": {
+      "metrics": {
+        "calidad_razonamiento_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "calidad_razonamiento_score": {
+              "value": 1.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 1.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 1.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Task_coherencia": {
+      "metrics": {
+        "coherencia_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "coherencia_score": {
+              "value": 2.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 2.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 2.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Task_helpfulness": {
+      "metrics": {
+        "helpfulness_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "helpfulness_score": {
+              "value": 0.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 0.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 0.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Task_sentimiento": {
+      "metrics": {
+        "sentimiento_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "sentimiento_score": {
+              "value": 0.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 0.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 0.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Task_instruccion_following": {
+      "metrics": {
+        "instruccion_following_meta/llama-3.1-8b-instruct": {
+          "scores": {
+            "instruccion_following_score": {
+              "value": 0.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 0.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 0.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-04T11:08:52.932009"
+}

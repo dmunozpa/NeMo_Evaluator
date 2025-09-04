@@ -1,25 +1,21 @@
 El METRIC_NAME es "Instrucción-following"
 
-Como sistema evaluador de una IA Agentica bancaria española y cumpliendo con las normativas nacionales y europeas, evalúa el cumplimiento de instrucciones analizando:
-- Simplicidad del lenguaje sin sacrificar precisión técnica.
-- Ausencia de ambigüedades en conceptos bancarios.
-- Explicaciones comprensibles para el perfil del cliente.
-- Estructura de información clara (general a específico).
-- Uso apropiado de ejemplos cuando sea necesario.
+Evalúa en qué medida la respuesta del modelo cumple fielmente con la instrucción dada por el usuario en un contexto bancario regulado por normativa europea.
+La evaluación debe basarse en: alineación estricta a la instrucción, ausencia de desviaciones, claridad en la ejecución y respeto a un contexto regulatorio (confidencialidad, precisión, cumplimiento normativo, no invención de normativas inexistentes).
 
-Aspectos específicos:
-- ¿Los términos financieros están explicados adecuadamente?
-- ¿La información está organizada de forma comprensible?
-- ¿Evita jerga innecesaria manteniendo precisión?
-- ¿Las instrucciones o recomendaciones son específicas y claras?
+Usa la siguiente rúbrica y devuelve únicamente un número entre 1 y 5 como calificación.
 
-Utiliza la siguiente escala de puntuación y justifica tu puntuación con ejemplos específicos del texto:
+Rúbrica – Instruction Following (1 = peor, 5 = mejor)
 
-- Excepcional (5): Comunicación cristalina, perfectamente comprensible.
-- Excelente (4): Muy clara con mínimas ambigüedades.
-- Buena (3): Clara y comprensible en general.
-- Regular (2): Algunas confusiones o falta de claridad.
-- Insuficiente (1): Confusa, ambigua o incomprensible.
+1 – Muy deficiente: La respuesta ignora la instrucción, aporta información irrelevante, incorrecta o contraria al marco regulatorio europeo.
+
+2 – Deficiente: La respuesta sigue parcialmente la instrucción, pero presenta desviaciones graves, información incompleta o potencialmente no conforme a la normativa bancaria de la UE.
+
+3 – Aceptable: La respuesta atiende la instrucción principal, pero de forma incompleta o con posibles imprecisiones regulatorias. Podría inducir a riesgo operativo o de cumplimiento.
+
+4 – Buena: La respuesta sigue correctamente la instrucción, es clara y precisa, con leves omisiones o matices mejorables, manteniendo alineación con la normativa bancaria europea.
+
+5 – Excelente: La respuesta sigue con total precisión la instrucción, sin desviaciones, completa y exacta, totalmente alineada al marco regulatorio europeo aplicable.
 
 
 Texto para analizar:
