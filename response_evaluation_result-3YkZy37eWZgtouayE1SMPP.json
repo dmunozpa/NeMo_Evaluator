@@ -1,0 +1,37 @@
+{
+  "job": "eval-5xNDSCCtMSixCrrp3eP5vY",
+  "id": "evaluation_result-3YkZy37eWZgtouayE1SMPP",
+  "created_at": "2025-09-05T07:47:11.153947",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_prompt_multiple": {
+      "metrics": {
+        "prompt_multiple_meta/llama-3.3-70b-instruct": {
+          "scores": {
+            "prompt_multiple_score": {
+              "value": 0.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 0.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 0.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-05T07:47:11.153951"
+}

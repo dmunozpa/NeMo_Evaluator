@@ -1,0 +1,37 @@
+{
+  "job": "eval-65c7ob4Sq6HY76fr1kRzZw",
+  "id": "evaluation_result-MxmndNhErzTwWEynboM2xn",
+  "created_at": "2025-09-05T08:03:34.348911",
+  "custom_fields": {},
+  "description": null,
+  "files_url": null,
+  "groups": {},
+  "namespace": "default",
+  "ownership": null,
+  "project": null,
+  "tasks": {
+    "Task_prompt_multiple": {
+      "metrics": {
+        "prompt_multiple_nvidia/llama-3.1-nemoguard-8b-content-safety": {
+          "scores": {
+            "prompt_multiple_score": {
+              "value": 0.0,
+              "stats": {
+                "count": 1,
+                "max": null,
+                "mean": 0.0,
+                "min": null,
+                "stddev": null,
+                "stderr": null,
+                "sum": 0.0,
+                "sum_squared": null,
+                "variance": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updated_at": "2025-09-05T08:03:34.348913"
+}

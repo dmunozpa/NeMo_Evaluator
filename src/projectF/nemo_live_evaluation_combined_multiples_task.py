@@ -26,7 +26,7 @@ def leer_prompt(name):
 
 models = ["meta/llama-3.1-8b-instruct","deepseek-ai/deepseek-v3.1", "meta/llama-3.3-70b-instruct" ]
 
-models = ["meta/llama-3.1-8b-instruct"]
+models = ["nvidia/llama-3.1-nemoguard-8b-content-safety"]
 #model_id = "meta/llama-3.1-8b-instruct"
 # model_id = "deepseek-ai/deepseek-v3.1"
 # model_id = "nvidia/llama-3.3-nemotron-super-49b-v1.5"
@@ -134,7 +134,7 @@ def build_config(
 
 
 # Ejemplo de uso
-lista_metricas = [
+lista_metricas2 = [
     "toxicidad",
     "tonalidad",
     "sesgo",
@@ -146,6 +146,7 @@ lista_metricas = [
     "instruccion_following",
 ]
 
+lista_metricas = ["prompt_multiple"]
 
 rows = [
     {
